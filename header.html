@@ -1,0 +1,512 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<header class="sticky">
+    <nav class="navbar">
+        <div class="container">
+     <a href="/index.html" class="logo-link">
+    <div class="logo">Developer <span>Hasebur</span></div>
+</a>
+
+             <ul class="nav-links" id="navLinks">
+            <li><a href="index.html?scrollTo=showcase">Showcase</a></li>
+            <li><a href="index.html?scrollTo=services">Services</a></li>
+            <li><a href="index.html?scrollTo=tutorials">Tutorials</a></li>
+            <li><a href="index.html?scrollTo=contact">Contact</a></li>
+            <li><a href="https://www.youtube.com/@developerhasebur" target="_blank">YouTube</a></li>
+            <li><a href="blog.html" target="">Blog</a></li>
+        </ul>
+
+            <div class="nav-right" id="rightnav">
+            <form class="search-bar" onsubmit="return handleSearch(event)">
+  <input type="text" id="searchInput" placeholder="Search blog..." />
+  <button type="submit"><i class="fas fa-search"></i></button>
+</form>
+
+<script>
+  function handleSearch(event) {
+    event.preventDefault(); // Stop normal form submit
+    const keyword = document.getElementById('searchInput').value.trim();
+    if (keyword) {
+      sessionStorage.setItem('blogSearchTerm', keyword);
+    } else {
+      sessionStorage.removeItem('blogSearchTerm');
+    }
+    window.location.href = 'blog.html'; // Go to blog.html without query string
+    return false;
+  }
+</script>
+
+
+                <div class="right-header-menu" id="right-headernav-menu">
+                    <a href="#contact" class="cta-button">Hire Me</a>
+                    <a href="https://wa.me/8801XXXXXXXXX" target="_blank" class="whatsapp-button">WhatsApp</a>
+                </div>
+                
+                <div class="mobile-nav" id="mobileNav">
+                    <div class="mobile-nav-close" id="mobileNavClose">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul class="mobile-nav-links">
+                        <li><a href="#showcase">Showcase</a></li>
+                        <li><a href="#services">Services</a></li>
+                       
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://www.youtube.com/@developerhasebur" target="_blank">YouTube</a></li>
+                          <li><a href="blog.html" target="_blank">Blog</a></li>
+                    </ul>
+                    <div class="mobile-nav-buttons">
+                        <a href="#contact" class="cta-button">Hire Me</a>
+                        <a href="https://wa.me/8801XXXXXXXXX" target="_blank" class="whatsapp-button">WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="hamburger-menu" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+    * {
+        font-family: 'Rubik', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        background: #fff;
+        width: 100%;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+        position: fixed;
+        top: 0;
+        z-index: 999;
+    }
+.logo-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits text color from parent */
+    /* Add any other styling to make it look like the original logo div */
+}
+
+
+
+    .navbar .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 12px clamp(12px, 4vw, 32px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(4px, 2vw, 32px);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .logo {
+        font-size: clamp(7px, 2vw, 1.8rem);
+        font-weight: 700;
+        color: #111;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .logo span {
+        color: #00bfa6;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: clamp(3px, 2vw, 24px);
+        list-style: none;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow-x: auto;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        font-size: clamp(5px, 1.2vw, 16px);
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+        color: #00bfa6;
+    }
+
+    .nav-links li a {
+        position: relative;
+    }
+
+    .nav-links li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #00bfa6;
+        transition: width 0.4s ease;
+    }
+
+    .nav-links li a:hover::after {
+        width: 100%;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: clamp(3px, 1.5vw, 16px);
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        flex-shrink: 1;
+    }
+
+    .search-bar {
+        position: relative;
+        flex-shrink: 1;
+    }
+
+    .search-bar input {
+        padding: 6px clamp(10px, 2vw, 36px) 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: clamp(5px, 1vw, 14px);
+        width: clamp(50px, 12vw, 180px);
+        transition: 0.3s;
+    }
+
+    .search-bar input:focus {
+        outline: none;
+        border-color: #00bfa6;
+        box-shadow: 0 0 0 2px rgba(0, 191, 166, 0.2);
+    }
+
+    .search-bar button {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: clamp(5px, 1vw, 14px);
+        color: #555;
+        cursor: pointer;
+    }
+
+    .search-bar button:hover {
+        color: #00bfa6;
+    }
+
+    .cta-button,
+    .whatsapp-button {
+        padding: clamp(2px, 0.6vw, 8px) clamp(5px, 1.5vw, 16px);
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: clamp(5px, 1vw, 14px);
+        transition: background 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .cta-button {
+        background: #00bfa6;
+        color: white;
+    }
+
+    .cta-button:hover {
+        background: #00a896;
+    }
+
+    .whatsapp-button {
+        background: #25D366;
+        color: white;
+    }
+
+    .whatsapp-button:hover {
+        background: #1ebe5b;
+    }
+
+    .hamburger-menu {
+        display: none;
+        font-size: clamp(16px, 4vw, 24px);
+        color: #333;
+        cursor: pointer;
+    }
+
+    @media (max-width: 500px) {
+        .hamburger-menu {
+            display: block;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .right-header-menu {
+            display: none;
+        }
+
+        .logo {
+            font-size: 2.5vh;
+        }
+
+        .search-bar input {
+            width: 100%;
+            font-size: 1.5vh;
+        }
+
+        .search-bar button {
+            font-size: 1.5vh;
+        }
+        .newsletter-form input {
+
+    width: 100%;
+}
+    }
+
+    /* Redesigned Mobile Navigation Only */
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        z-index: 1000;
+        padding: 70px 20px 30px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .mobile-nav.active {
+        transform: translateX(0);
+    }
+
+    .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .mobile-nav-links li {
+        margin: 8px 0;
+        width: 100%;
+        text-align: center;
+        background: rgba(255,255,255,0.8);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-links li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .mobile-nav-links li a {
+        text-decoration: none;
+        font-size: clamp(16px, 4vw, 18px);
+        color: #2d3748;
+        font-weight: 600;
+        display: block;
+        padding: 15px 20px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .mobile-nav-links li a::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        background: #00bfa6;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-links li a:hover,
+    .mobile-nav-links li a:focus {
+        color: #00bfa6;
+        padding-left: 30px;
+        background: rgba(255,255,255,0.95);
+    }
+
+    .mobile-nav-links li a:hover::before,
+    .mobile-nav-links li a:focus::before {
+        opacity: 1;
+        left: 20px;
+    }
+
+    .mobile-nav-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 30px 20px 10px;
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto 0;
+    }
+
+    .mobile-nav-buttons .cta-button,
+    .mobile-nav-buttons .whatsapp-button {
+        display: block;
+        text-align: center;
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 191, 166, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-buttons .cta-button:hover,
+    .mobile-nav-buttons .whatsapp-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 191, 166, 0.3);
+    }
+
+    .mobile-nav-close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: #4a5568;
+        cursor: pointer;
+        z-index: 1001;
+        transition: all 0.3s ease;
+        background: rgba(255,255,255,0.9);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .mobile-nav-close:hover {
+        color: #00bfa6;
+        transform: rotate(90deg);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+</style>
+
+<script>
+    // Mobile Navigation Script
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+
+    hamburger.addEventListener('click', () => {
+        mobileNav.style.display = 'block';
+        setTimeout(() => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }, 10);
+    });
+
+    mobileNavClose.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        setTimeout(() => {
+            mobileNav.style.display = 'none';
+            document.body.style.overflow = '';
+        }, 400);
+    });
+
+    const links = document.querySelectorAll('#mobileNav a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            setTimeout(() => {
+                mobileNav.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 400);
+        });
+    });
+</script>
+
+
+<script>
+function initializeHeaderNavScripts() {
+    const allNavLinks = document.querySelectorAll(
+        '#navLinks a[href], ' +
+        '#mobileNav a[href]'
+    );
+
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            const currentPath = window.location.pathname.split('/').pop();
+            
+            const linkFilePart = href.split('#')[0].split('?')[0].split('/').pop();
+            
+            const urlParams = new URLSearchParams(href.split('?')[1] || '');
+
+            const isLinkToHomePageSection = (linkFilePart === 'index.html' || linkFilePart === '') && urlParams.has('scrollTo');
+
+            const isCurrentlyOnHomePage = (currentPath === 'index.html' || currentPath === '');
+
+            const isDirectHashLink = href.startsWith('#');
+
+            // --- Scenario 1: On the homepage, clicking a link to an index.html section (e.g., ?scrollTo=X) ---
+            if (isCurrentlyOnHomePage && isLinkToHomePageSection) {
+                event.preventDefault();
+
+                const targetId = urlParams.get('scrollTo');
+                if (targetId) {
+                    document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                    
+                    if (window.location.search.includes('?scrollTo=')) {
+                           window.history.replaceState(null, '', window.location.pathname);
+                    }
+                }
+            }
+            // --- Scenario 2: On the homepage, clicking a direct hash link (if any exist in your header) ---
+            else if (isCurrentlyOnHomePage && isDirectHashLink) {
+                event.preventDefault();
+                const targetId = href.split('#').pop();
+                document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+            }
+            // --- Scenario 3: NOT on the homepage, clicking a link to an index.html section (e.g., ?scrollTo=X) ---
+            else if (!isCurrentlyOnHomePage && isLinkToHomePageSection) {
+                event.preventDefault();
+
+                const scrollToId = urlParams.get('scrollTo');
+                if (scrollToId) {
+                    sessionStorage.setItem('scrollToTarget', scrollToId);
+                    window.location.href = '/portfolio/index.html';
+                } else {
+                    window.location.href = '/portfolio/index.html';
+                }
+            }
+            // --- Scenario 4: Any other type of link (e.g., to blog.html, external links) ---
+            else {
+                // Let the browser handle these links normally
+            }
+        });
+    });
+}
+
+// Ensure the script runs when the DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeHeaderNavScripts);
+} else {
+    initializeHeaderNavScripts();
+}
+</script>

@@ -1,0 +1,1162 @@
+  <!-- Header Include -->
+  <div id="header-placeholder"></div>
+<!DOCTYPE html>
+<html lang="en" class="theme-variables l-page-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Shopify Store Optimization Guide (2024)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    /* ===== GLOBAL STYLES & RESETS (Class-Based) ===== */
+    /* CSS Variables moved to a theme-variables class on the html tag */
+    html.theme-variables {
+        /* Colors */
+        --primary-color: #007bff; /* A modern, inviting blue */
+        --secondary-color: #6c757d; /* Muted gray for secondary elements */
+        --accent-color: #28a745; /* A subtle green for highlights/success */
+        --text-dark: #212529; /* Very dark for main content */
+        --text-medium: #495057; /* Slightly lighter for paragraphs */
+        --text-light: #6c757d; /* Light gray for meta info */
+        --bg-light: #f8f9fa; /* Off-white background */
+        --bg-card: #ffffff; /* White for cards/containers */
+        --border-color: #dee2e6; /* Light border color */
+        --shadow-color: rgba(0, 0, 0, 0.05); /* Subtle shadow */
+        --white: #ffffff; /* Explicit white for text on colored backgrounds */
+
+        /* Typography */
+        --font-heading: 'Poppins', sans-serif;
+        --font-body: 'Open Sans', sans-serif;
+        --font-size-base: 16px;
+        --line-height-base: 1.7;
+
+        /* Spacing */
+        --space-xs: 8px;
+        --space-sm: 16px;
+        --space-md: 24px;
+        --space-lg: 32px;
+        --space-xl: 48px;
+        --space-xxl: 80px; /* New larger spacing for sections */
+
+        /* Border Radius */
+        --border-radius-sm: 5px;
+        --border-radius-md: 10px;
+    }
+
+    /* Universal box-sizing and smooth scrolling */
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Base HTML styles for scroll behavior */
+    html.l-page-html {
+        scroll-behavior: smooth; /* For smooth anchor scrolling */
+    }
+
+    /* Base Body Styles */
+    body.l-page-body {
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-base);
+        color: var(--text-medium);
+        background-color: var(--bg-light);
+        -webkit-font-smoothing: antialiased; /* Better font rendering */
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Base Link Styles */
+    .u-link-base {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+    }
+
+    .u-link-base:hover {
+        color: var(--text-dark); /* A subtle darkening on hover */
+    }
+
+    /* Responsive Image Utility */
+    .u-image-responsive {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Heading Utility Classes */
+    .u-heading-1, .u-heading-2, .u-heading-3, .u-heading-4, .u-heading-5, .u-heading-6 {
+        font-family: var(--font-heading);
+        color: var(--text-dark);
+        line-height: 1.25;
+        margin-bottom: var(--space-sm);
+    }
+
+    .u-heading-1 { font-size: 2.5rem; }
+    .u-heading-2 { font-size: 2rem; }
+    .u-heading-3 { font-size: 1.75rem; }
+    .u-heading-4 { font-size: 1.5rem; }
+    .u-heading-5 { font-size: 1.25rem; }
+    .u-heading-6 { font-size: 1rem; }
+
+    /* Paragraph Utility Class */
+    .u-paragraph-text {
+        margin-bottom: var(--space-md); /* More space for paragraphs */
+    }
+
+    /* List Utility Classes */
+    .u-list-unordered, .u-list-ordered {
+        margin-bottom: var(--space-lg);
+        padding-left: var(--space-lg);
+    }
+
+    .u-list-item {
+        margin-bottom: var(--space-xs);
+    }
+
+    /* Utility Classes (existing ones, kept as is) */
+    .text-center { text-align: center; }
+    .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Base Button Styles */
+    .c-button-primary {
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+        border-radius: var(--border-radius-sm);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        padding: 12px 25px;
+        font-weight: 600;
+        color: var(--white);
+        background-color: var(--primary-color); /* Solid color for buttons */
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Shadow with primary color tint */
+    }
+
+    .c-button-primary:hover {
+        background-color: #0056b3; /* A slightly darker blue */
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    /* General Card/Container Styles */
+    .card-base {
+        background-color: var(--bg-card);
+        border-radius: var(--border-radius-md);
+        box-shadow: 0 2px 8px var(--shadow-color); /* Lighter shadow */
+        padding: var(--space-lg);
+        border: 1px solid var(--border-color); /* Subtle border for definition */
+    }
+
+    /* ===== MAIN LAYOUT (New structure: container-x and container-y) ===== */
+    .container-x {
+        display: grid;
+        /* Wider columns for better content fit and "same design" on desktop */
+        grid-template-columns: 280px 1fr 280px; /* Applies to all desktop sizes */
+        gap: 10px; /* Reduced gap between columns to 15px */
+        max-width: 1600px; /* Increased max-width for overall page width */
+        margin: 75px auto 0; /* Center the container with top margin, no bottom margin here */
+        padding: 0 var(--space-lg); /* Horizontal padding for smaller screens/edges */
+        position: relative; /* Crucial for sticky column context */
+        margin-bottom: var(--space-xxl); /* Space between container-x and container-y */
+        background-color: white;
+    }
+
+    .container-y {
+        max-width: 1600px; /* Match width of container-x */
+        margin: 0 auto var(--space-xl); /* Center, with bottom margin */
+        padding: 0 var(--space-lg); /* Match horizontal padding */
+    }
+
+    /* Responsive adjustments for the grid */
+    @media (max-width: 992px) { /* Breakpoint for tablet and smaller */
+        .container-x {
+            /* Stack columns vertically on tablets and smaller screens */
+            grid-template-columns: 1fr;
+            gap: var(--space-xl); /* Keep vertical gap consistent */
+            padding: var(--space-lg) var(--space-md); /* More vertical padding when stacked */
+            margin-top: var(--space-lg); /* Adjust top margin for stacked layout */
+        }
+        .container-y {
+            padding: 0 var(--space-md);
+        }
+    }
+
+    @media (max-width: 576px) {
+        .container-x {
+            padding: var(--space-lg) var(--space-sm); /* Tighter padding on small mobiles */
+        }
+        .container-y {
+            padding: 0 var(--space-sm);
+        }
+    }
+
+    /* ===== LEFT COLUMN - TABLE OF CONTENTS (Ensured Fit Vertically) ===== */
+    .toc-column {
+        position: sticky;
+        top: 120px; /* Sticks 32px from the top of the viewport */
+        align-self: start; /* Aligns the item to the start of the grid area */
+        /* Calculated max-height to ensure content fits without vertical scroll.
+            100vh minus minimal top/bottom margin for the sticky element itself. */
+        max-height: calc(100vh - (2 * var(--space-xs))); /* 100vh - 16px */
+        overflow-y: hidden; /* Prevents internal scrolling */
+    }
+
+    .toc-container {
+        /* Already has .card-base */
+        padding: var(--space-sm); /* Reduced padding to save vertical space */
+    }
+
+    .toc-title {
+        font-size: 1rem; /* Slightly reduced font size */
+        margin-bottom: var(--space-sm); /* Reduced margin */
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+        padding-bottom: var(--space-xs);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .toc-title i {
+        color: var(--primary-color);
+        font-size: 1.1em;
+    }
+
+    .toc-nav__list { /* Replaced ul with class */
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .toc-link {
+        display: block;
+        padding: var(--space-xs) var(--space-sm);
+        margin: var(--space-xs) 0; /* Consistent small margin */
+        border-radius: var(--border-radius-sm);
+        color: var(--text-medium);
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        font-size: 0.88rem; /* Further reduced font size */
+    }
+
+    .toc-link:hover {
+        background-color: rgba(0, 123, 255, 0.08);
+        color: var(--primary-color);
+        transform: translateX(5px);
+    }
+
+    .toc-link.active {
+        background-color: rgba(0, 123, 255, 0.15);
+        color: var(--primary-color);
+        font-weight: 600;
+        padding-left: var(--space-lg);
+    }
+
+    .toc-link.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 80%;
+        width: 4px;
+        background: var(--primary-color);
+        border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+    }
+
+    .toc-nav__sub-list { /* Replaced ul ul with class */
+        padding-left: var(--space-md);
+        border-left: 1px dashed var(--border-color);
+        margin-top: var(--space-xs);
+        margin-bottom: var(--space-xs);
+    }
+
+    .toc-nav__sub-list .toc-link { /* Nested link style */
+        font-size: 0.78rem; /* Smallest font for sub-items */
+        font-weight: 400;
+    }
+
+    /* Remove sticky behavior on smaller screens for all sticky columns */
+    @media (max-width: 992px) {
+        .toc-column,
+        .author-column {
+            position: static;
+            max-height: unset;
+            overflow-y: visible;
+            padding-right: 0;
+            padding-left: 0;
+            margin-bottom: var(--space-lg);
+        }
+        .toc-container,
+        .author-card,
+        .subscribe-widget {
+            box-shadow: var(--shadow-color);
+        }
+    }
+
+    /* ===== CENTER COLUMN - BLOG CONTENT ===== */
+    .blog-content-column {
+        padding: 10px;
+        line-height: var(--line-height-base);
+        color: var(--text-medium);
+    }
+
+    .post-header {
+        margin-bottom: var(--space-xl);
+    }
+
+    .category {
+        display: inline-block;
+        background-color: rgba(0, 123, 255, 0.1);
+        color: var(--primary-color);
+        padding: 6px 15px;
+        border-radius: var(--border-radius-sm);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: var(--space-sm);
+        transition: all 0.2s ease;
+    }
+
+    .category:hover {
+        background-color: var(--primary-color);
+        color: var(--white);
+    }
+
+    .post-title { /* Already a class, kept as is */
+        font-size: 2.8rem;
+        margin-bottom: var(--space-md);
+        color: var(--text-dark);
+        line-height: 1.1;
+    }
+
+    .post-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: var(--space-lg);
+    }
+
+    .post-meta i {
+        color: var(--secondary-color);
+        margin-right: 5px;
+    }
+
+    .featured-image {
+        border-radius: var(--border-radius-md);
+        overflow: hidden;
+        margin-bottom: var(--space-xl);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured-image .u-image-responsive { /* Target the image inside the featured-image class */
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    .featured-image:hover .u-image-responsive {
+        transform: scale(1.03);
+    }
+
+    /* ===== RIGHT COLUMN - AUTHOR & SUBSCRIBE (Ensured Fit Vertically) ===== */
+    .author-column {
+        position: sticky;
+        top: 75px;
+        align-self: start;
+        max-height: calc(100vh - (2 * var(--space-xs))); /* 100vh - 16px */
+        overflow-y: hidden; /* Prevents internal scrolling */
+    }
+
+    .author-card {
+        /* Already has .card-base */
+        padding: var(--space-sm); /* Reduced padding to save vertical space */
+        text-align: center;
+        margin-bottom: 10px; /* Reduced margin between author and subscribe widgets */
+        position: relative;
+        overflow: hidden;
+    }
+
+    .author-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: var(--primary-color);
+        border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    }
+
+    .author-avatar {
+        width: 80px; /* Slightly smaller avatar */
+        height: 80px; /* Slightly smaller avatar */
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary-color);
+        margin: 0 auto var(--space-sm); /* Reduced margin below avatar */
+        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    }
+
+    .author-card .u-heading-3 { /* Targeting the heading within the author card */
+        font-size: 1.15rem; /* Slightly reduced font size */
+        margin-bottom: var(--space-xs);
+        color: var(--text-dark);
+    }
+
+    .author-title { /* Already a class, kept as is */
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: var(--space-sm); /* Reduced margin */
+        font-size: 0.78rem; /* Further reduced font size */
+    }
+
+    .author-bio { /* Already a class, kept as is */
+        color: var(--text-medium);
+        margin-bottom: var(--space-md); /* Keep enough space for bio */
+        font-size: 0.82rem; /* Further reduced font size */
+    }
+
+    .author-social {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-sm);
+        margin-top: -20px;
+    }
+
+    .author-social .u-link-base { /* Target the link inside social */
+        width: 34px; /* Slightly smaller social icons */
+        height: 34px; /* Slightly smaller social icons */
+        border-radius: 50%;
+        background-color: var(--bg-light);
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        font-size: 0.85rem; /* Ensure icon scales */
+    }
+
+    .author-social .u-link-base:hover {
+        background-color: var(--primary-color);
+        color: var(--white);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    }
+
+    .subscribe-widget {
+        /* Already has .card-base */
+        padding: var(--space-sm); /* Reduced padding to save vertical space */
+    }
+
+    .subscribe-widget .u-heading-4 { /* Targeting the heading within the widget */
+        font-size: 1.05rem; /* Slightly reduced font size */
+        margin-bottom: var(--space-md);
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+    }
+
+    .subscribe-widget .u-heading-4 i {
+        color: var(--primary-color);
+    }
+
+    .subscribe-widget .u-paragraph-text { /* Targeting the paragraph within the widget */
+        color: var(--text-medium);
+        margin-bottom: var(--space-md);
+        font-size: 0.82rem; /* Further reduced font size */
+    }
+
+    .subscribe-form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .subscribe-form .c-form-input { /* Target the input with its new class */
+        padding: 8px 10px; /* Reduced padding */
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius-sm);
+        font-size: 0.8rem; /* Further reduced font size */
+        transition: all 0.3s ease;
+        color: var(--text-dark);
+    }
+
+    .subscribe-form .c-form-input::placeholder {
+        color: var(--text-light);
+    }
+
+    .subscribe-form .c-form-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+
+    .subscribe-form .c-button-primary { /* Target the button with its new class */
+        width: 100%;
+        padding: 9px; /* Reduced padding */
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-xs);
+        font-size: 0.85rem; /* Reduced button font size */
+    }
+
+    /* ===== RELATED POSTS (Now in container-y) ===== */
+    .related-posts {
+        padding: var(--space-xl);
+        /* Already has .card-base */
+    }
+
+    .related-title { /* Already a class, kept as is */
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: var(--space-xl);
+        color: var(--text-dark);
+        position: relative;
+        padding-bottom: var(--space-sm);
+    }
+
+    .related-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-color);
+        border-radius: var(--border-radius-sm);
+    }
+
+    .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: var(--space-lg);
+    }
+
+    .related-card {
+        /* Already has .card-base */
+        overflow: hidden;
+        box-shadow: var(--shadow-color);
+        transition: all 0.3s ease;
+    }
+
+    .related-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-card-image {
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .related-card-image .u-image-responsive { /* Target the image inside related-card-image */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .related-card:hover .related-card-image .u-image-responsive {
+        transform: scale(1.05);
+    }
+
+    .related-card-content {
+        padding: var(--space-md);
+    }
+
+    .related-card .u-heading-3 { /* Target the heading within the related card */
+        font-size: 1.25rem;
+        margin-bottom: var(--space-xs);
+        color: var(--text-dark);
+        line-height: 1.3;
+    }
+
+    .related-card .u-paragraph-text { /* Target the paragraph within the related card */
+        color: var(--text-light);
+        margin-bottom: var(--space-md);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .related-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: var(--text-light);
+        margin-top: var(--space-sm);
+        padding-top: var(--space-sm);
+        border-top: 1px solid var(--border-color);
+    }
+
+    .read-more { /* Already a class, kept as is */
+        color: var(--primary-color);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+        color: #0056b3;
+        gap: 8px;
+    }
+
+    /* For screens smaller than 480px (e.g., mobile phones) */
+    @media (max-width: 480px) {
+        .post-title {
+            font-size: 35px;
+        }
+
+        .related-grid {
+            grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
+            gap: var(--space-lg); /* Maintain a decent gap between stacked cards */
+        }
+
+        .related-posts {
+            padding: var(--space-md); /* Further reduce padding */
+        }
+
+        .related-title {
+            font-size: 1.5rem; /* Even smaller title */
+            margin-bottom: var(--space-md);
+        }
+
+        .related-card-image {
+            height: 200px; /* Can be slightly taller when stacked */
+        }
+
+        .related-card .u-heading-3 { /* Adjusted heading size */
+            font-size: 1.15rem; /* Slightly adjust heading */
+        }
+
+        .related-card .u-paragraph-text { /* Adjusted paragraph size */
+            font-size: 0.95rem; /* Keep paragraph readable */
+        }
+    }
+</style>
+</head>
+<body class="l-page-body">
+    <div class="container-x">
+        <aside class="toc-column">
+            <div class="toc-container card-base">
+                <h3 class="toc-title u-heading-3"><i class="fas fa-list-ul"></i> Table of Contents</h3>
+                <nav class="toc-nav">
+                    <ul class="u-list-unordered toc-nav__list">
+                        <li class="u-list-item toc-nav__list-item"><a href="#introduction" class="toc-link u-link-base">Introduction</a></li>
+                        <li class="u-list-item toc-nav__list-item"><a href="#speed-optimization" class="toc-link u-link-base">🚀 Speed Optimization</a></li>
+                        <li class="u-list-item toc-nav__list-item"><a href="#seo-strategies" class="toc-link u-link-base">🔍 SEO Strategies</a></li>
+                        <li class="u-list-item toc-nav__list-item"><a href="#conversion-tactics" class="toc-link u-link-base">💰 Conversion Tactics</a></li>
+                        <li class="u-list-item toc-nav__list-item"><a href="#must-have-apps" class="toc-link u-link-base">🛠️ Must-Have Apps</a></li>
+                        <li class="u-list-item toc-nav__list-item"><a href="#mobile-optimization" class="toc-link u-link-base">📱 Mobile Optimization</a></li>
+                        <li class="u-list-item toc-nav__list-item"><a href="#analytics-tracking" class="toc-link u-link-base">📊 Analytics & Tracking</a></li>
+                        <li class="u-list-item toc-nav__list-item"><a href="#conclusion" class="toc-link u-link-base">Conclusion</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="blog-content-column">
+            <article class="post">
+                <div class="post-header">
+                    <span class="category">Shopify Optimization</span>
+                    <h1 class="post-title u-heading-1">Ultimate Shopify Store Optimization Guide (2024)</h1>
+                    <div class="post-meta">
+                        <span class="post-meta__item"><i class="far fa-calendar-alt"></i> June 15, 2024</span>
+                        <span class="post-meta__item"><i class="far fa-clock"></i> 12 min read</span>
+                    </div>
+                </div>
+
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shopify Store Optimization" class="u-image-responsive">
+                </div>
+
+                <div class="post-content">
+                    <style>
+                        /* Styles specifically for elements within .post-content */
+                        .post-content__heading-2 { /* Changed h2 to class */
+                            font-size: 2rem;
+                            margin: var(--space-xl) 0 var(--space-md);
+                            color: var(--text-dark);
+                            position: relative;
+                            padding-bottom: var(--space-xs);
+                        }
+
+                        .post-content__heading-2::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 60px;
+                            height: 3px;
+                            background-color: var(--primary-color);
+                            border-radius: var(--border-radius-sm);
+                        }
+
+                        .post-content__heading-3 { /* Changed h3 to class */
+                            font-size: 1.5rem;
+                            margin: var(--space-lg) 0 var(--space-sm);
+                            color: var(--text-dark);
+                        }
+
+                        .post-content__paragraph { /* Changed p to class */
+                            margin-bottom: var(--space-md);
+                            color: var(--text-medium);
+                            font-size: var(--font-size-base);
+                        }
+
+                        .post-content__list-unordered,
+                        .post-content__list-ordered { /* Changed ul, ol to classes */
+                            margin-bottom: var(--space-lg);
+                            padding-left: var(--space-lg);
+                            list-style-position: outside;
+                        }
+
+                        .post-content__list-item { /* Changed li to class */
+                            margin-bottom: var(--space-xs);
+                        }
+
+                        /* Specific list item styles */
+                        .post-content__list-unordered .post-content__list-item::marker {
+                            color: var(--primary-color);
+                            font-size: 1.1em;
+                        }
+                        .post-content__list-ordered .post-content__list-item::marker {
+                            color: var(--primary-color);
+                            font-weight: 600;
+                        }
+
+                        .tip-box {
+                            background-color: rgba(40, 167, 69, 0.08);
+                            border-left: 5px solid var(--accent-color);
+                            padding: var(--space-md);
+                            border-radius: var(--border-radius-sm);
+                            margin: var(--space-lg) 0;
+                            color: var(--text-dark);
+                            font-size: 0.95rem;
+                        }
+
+                        .tip-box__paragraph { /* Changed p inside tip-box to class */
+                            margin-bottom: 0;
+                            font-weight: 500;
+                        }
+
+                        .tip-box::before {
+                            content: '💡 Pro Tip';
+                            display: block;
+                            font-weight: 700;
+                            color: var(--accent-color);
+                            margin-bottom: var(--space-xs);
+                            font-size: 0.9rem;
+                            text-transform: uppercase;
+                        }
+
+                        /* Media queries specifically affecting post-content children */
+                        @media (max-width: 480px) {
+                            .post-content__heading-2{
+                                font-size: 25px;
+                            }
+                            .post-content__paragraph {
+                                font-size: 20px;
+                            }
+                        }
+                    </style>
+                    <section id="introduction">
+                        <h2 class="post-content__heading-2 u-heading-2">Why Shopify Optimization Matters in 2024</h2>
+                        <p class="post-content__paragraph u-paragraph-text">In today's competitive e-commerce landscape, having a Shopify store isn't enough. With over 4.4 million active Shopify stores, optimization is the key differentiator between thriving businesses and those that struggle to make sales.</p>
+
+                        <div class="tip-box">
+                            <p class="tip-box__paragraph u-paragraph-text">Optimized Shopify stores convert 35-45% better than non-optimized stores according to recent data from Shopify Plus merchants.</p>
+                        </div>
+
+                        <p class="post-content__paragraph u-paragraph-text">This comprehensive guide will walk you through the most effective Shopify optimization strategies that will:</p>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">Improve your store's loading speed by 50-70%</li>
+                            <li class="post-content__list-item u-list-item">Boost organic traffic through smart SEO techniques</li>
+                            <li class="post-content__list-item u-list-item">Increase conversion rates with proven UX principles</li>
+                            <li class="post-content__list-item u-list-item">Enhance mobile shopping experience</li>
+                            <li class="post-content__list-item u-list-item">Implement must-have apps that automate optimization</li>
+                        </ul>
+                    </section>
+
+                    <section id="speed-optimization">
+                        <h2 class="post-content__heading-2 u-heading-2">🚀 Speed Optimization: The Silent Sales Killer</h2>
+                        <p class="post-content__paragraph u-paragraph-text">Shopify store speed directly impacts your conversion rates. Research shows that:</p>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">53% of mobile users abandon sites that take longer than 3 seconds to load</li>
+                            <li class="post-content__list-item u-list-item">A 1-second delay can result in 7% reduction in conversions</li>
+                            <li class="post-content__list-item u-list-item">Google now considers page speed as a ranking factor</li>
+                        </ul>
+
+                        <h3 class="post-content__heading-3 u-heading-3">Image Optimization Techniques</h3>
+                        <p class="post-content__paragraph u-paragraph-text">Images account for 50-60% of a typical Shopify store's page weight. Follow these best practices:</p>
+
+                        <div class="tip-box">
+                            <p class="tip-box__paragraph u-paragraph-text">Use the free Shopify app "Crush.pics" to automatically optimize all your product images without quality loss.</p>
+                        </div>
+                    </section>
+
+                    <section id="seo-strategies">
+                        <h2 class="post-content__heading-2 u-heading-2">🔍 SEO Strategies That Actually Work</h2>
+                        <p class="post-content__paragraph u-paragraph-text">Shopify has unique SEO challenges but also great opportunities. Here's how to rank higher:</p>
+
+                        <h3 class="post-content__heading-3 u-heading-3">Product Page SEO</h3>
+                        <p class="post-content__paragraph u-paragraph-text">Your product pages are your money makers. Optimize them with:</p>
+                        <ol class="post-content__list-ordered u-list-ordered">
+                            <li class="post-content__list-item u-list-item">Keyword-rich titles (include your main keyword naturally)</li>
+                            <li class="post-content__list-item u-list-item">Detailed product descriptions (300+ words)</li>
+                            <li class="post-content__list-item u-list-item">Unique image alt text for every product image</li>
+                            <li class="post-content__list-item u-list-item">Structured data markup (use Shopify's built-in schema)</li>
+                        </ol>
+                    </section>
+
+                    <section id="conversion-tactics">
+                        <h2 class="post-content__heading-2 u-heading-2">💰 Conversion Tactics for Higher Sales</h2>
+                        <p class="post-content__paragraph u-paragraph-text">Turning visitors into customers is the ultimate goal. Implement these conversion-boosting tactics:</p>
+                        <h3 class="post-content__heading-3 u-heading-3">Streamlined Checkout Process</h3>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">Offer multiple payment options.</li>
+                            <li class="post-content__list-item u-list-item">Minimize steps in the checkout flow.</li>
+                            <li class="post-content__list-item u-list-item">Enable guest checkout to reduce friction.</li>
+                            <li class="post-content__list-item u-list-item">Ensure clear shipping costs and delivery times upfront.</li>
+                        </ul>
+                        <h3 class="post-content__heading-3 u-heading-3">Trust Signals & Social Proof</h3>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">Display customer reviews prominently.</li>
+                            <li class="post-content__list-item u-list-item">Show security badges (SSL, payment gateways).</li>
+                            <li class="post-content__list-item u-list-item">Feature testimonials and case studies.</li>
+                            <li class="post-content__list-item u-list-item">Highlight awards or media mentions.</li>
+                        </ul>
+                        <h3 class="post-content__heading-3 u-heading-3">Compelling Call-to-Actions (CTAs)</h3>
+                        <p class="post-content__paragraph u-paragraph-text">Make your CTAs clear, action-oriented, and visually distinct.</p>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">"Add to Cart" should be obvious.</li>
+                            <li class="post-content__list-item u-list-item">Use contrasting colors for buttons.</li>
+                            <li class="post-content__list-item u-list-item">Experiment with different button texts.</li>
+                        </ul>
+                    </section>
+
+                    <section id="must-have-apps">
+                        <h2 class="post-content__heading-2 u-heading-2">🛠️ Must-Have Shopify Apps for Growth</h2>
+                        <p class="post-content__paragraph u-paragraph-text">Leverage the power of the Shopify App Store to automate tasks, improve marketing, and enhance customer experience. Here are a few categories and examples:</p>
+                        <h3 class="post-content__heading-3 u-heading-3">Email Marketing & Automation</h3>
+                        <p class="post-content__paragraph u-paragraph-text">Apps like Klaviyo or Omnisend help you build email lists, send automated flows (abandoned cart, welcome series), and segment customers.</p>
+                        <h3 class="post-content__heading-3 u-heading-3">Review Apps</h3>
+                        <p class="post-content__paragraph u-paragraph-text">Tools like Loox or Yotpo collect and display stunning product reviews, building trust and social proof.</p>
+                        <h3 class="post-content__heading-3 u-heading-3">Upsell & Cross-sell Apps</h3>
+                        <p class="post-content__paragraph u-paragraph-text">Boost your average order value (AOV) with apps like OneClickUpsell or ReConvert by offering relevant products at checkout.</p>
+                        <h3 class="post-content__heading-3 u-heading-3">Customer Service & Chat</h3>
+                        <p class="post-content__paragraph u-paragraph-text">Integrate live chat (e.g., Gorgias, Tidio) to offer immediate support and answer customer queries, reducing bounce rates.</p>
+                    </section>
+
+                    <section id="mobile-optimization">
+                        <h2 class="post-content__heading-2 u-heading-2">📱 Mobile Optimization: The Future of E-commerce</h2>
+                        <p class="post-content__paragraph u-paragraph-text">With mobile traffic dominating online shopping, a seamless mobile experience is non-negotiable. Shopify themes are generally responsive, but fine-tuning is essential:</p>
+                        <h3 class="post-content__heading-3 u-heading-3">Responsive Design Principles</h3>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">Test your store regularly on various devices.</li>
+                            <li class="post-content__list-item u-list-item">Ensure all elements scale correctly.</li>
+                            <li class="post-content__list-item u-list-item">Prioritize tap targets for easy navigation.</li>
+                        </ul>
+                        <h3 class="post-content__heading-3 u-heading-3">Faster Mobile Loading</h3>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">Optimize images specifically for mobile.</li>
+                            <li class="post-content__list-item u-list-item">Minimize custom code and apps that slow down mobile.</li>
+                            <li class="post-content__list-item u-list-item">Leverage browser caching.</li>
+                        </ul>
+                        <h3 class="post-content__heading-3 u-heading-3">Simplified Navigation</h3>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">Use clear, concise menus (hamburger menus are standard).</li>
+                            <li class="post-content__list-item u-list-item">Reduce clutter on product pages.</li>
+                            <li class="post-content__list-item u-list-item">Make search easily accessible.</li>
+                        </ul>
+                    </section>
+
+                    <section id="analytics-tracking">
+                        <h2 class="post-content__heading-2 u-heading-2">📊 Analytics & Tracking: Know Your Numbers</h2>
+                        <p class="post-content__paragraph u-paragraph-text">You can't optimize what you don't measure. Setting up robust analytics is critical for understanding customer behavior and identifying areas for improvement.</p>
+                        <h3 class="post-content__heading-3 u-heading-3">Google Analytics 4 (GA4) Integration</h3>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">Connect your Shopify store to GA4 for comprehensive data.</li>
+                            <li class="post-content__list-item u-list-item">Track key events: product views, add-to-carts, checkouts, purchases.</li>
+                            <li class="post-content__list-item u-list-item">Understand customer journeys across devices.</li>
+                        </ul>
+                        <h3 class="post-content__heading-3 u-heading-3">Shopify Analytics Dashboard</h3>
+                        <ul class="post-content__list-unordered u-list-unordered">
+                            <li class="post-content__list-item u-list-item">Utilize Shopify's built-in reports for quick insights into sales, traffic, and customer behavior.</li>
+                            <li class="post-content__list-item u-list-item">Monitor conversion funnels to pinpoint drop-off points.</li>
+                        </ul>
+                        <h3 class="post-content__heading-3 u-heading-3">Heatmaps & Session Recordings</h3>
+                        <p class="post-content__paragraph u-paragraph-text">Tools like Hotjar or Microsoft Clarity allow you to see exactly how users interact with your store. Identify common scrolling patterns, click behavior, and areas of frustration.</p>
+                    </section>
+
+                    <section id="conclusion">
+                        <h2 class="post-content__heading-2 u-heading-2">Final Thoughts</h2>
+                        <p class="post-content__paragraph u-paragraph-text">Shopify optimization is an ongoing process, not a one-time task. By implementing these strategies, you'll create a faster, more visible, and higher-converting store that stands out in 2024's competitive e-commerce landscape.</p>
+                    </section>
+                </div>
+            </article>
+        </main>
+
+        <aside class="author-column">
+            <div class="author-card card-base">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="author-avatar u-image-responsive">
+                <h3 class="u-heading-3">Hasebur Rahman</h3>
+                <p class="author-title u-paragraph-text">Shopify Expert & E-commerce Consultant</p>
+                <p class="author-bio u-paragraph-text">5+ years helping stores scaling through strategic optimization and conversion rate optimization.</p>
+                <div class="author-social">
+                    <a href="#" class="u-link-base"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="u-link-base"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="u-link-base"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="subscribe-widget card-base">
+                <h4 class="u-heading-4"><i class="fas fa-paper-plane"></i> Get Shopify Tips</h4>
+                <p class="u-paragraph-text">Join 15,000+ store owners getting weekly optimization strategies.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Your best email" required class="c-form-input">
+                    <button type="submit" class="c-button-primary">Subscribe <i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <div class="container-y">
+        <section class="related-posts card-base">
+            <h2 class="related-title u-heading-2">More Shopify Guides You'll Love</h2>
+            <div class="related-grid">
+                <article class="related-card card-base">
+                    <div class="related-card-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shopify SEO" class="u-image-responsive">
+                    </div>
+                    <div class="related-card-content">
+                        <h3 class="u-heading-3">Advanced Shopify SEO: 2024 Techniques</h3>
+                        <p class="u-paragraph-text">Discover the latest SEO strategies to rank your Shopify store higher in search results.</p>
+                        <div class="related-meta">
+                            <span class="related-meta__item">12 min read</span>
+                            <a href="#" class="read-more u-link-base">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="related-card card-base">
+                    <div class="related-card-image">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Conversion Optimization" class="u-image-responsive">
+                    </div>
+                    <div class="related-card-content">
+                        <h3 class="u-heading-3">Shopify Conversion Rate Optimization Guide</h3>
+                        <p class="u-paragraph-text">Proven tactics to boost your Shopify store's conversion rates by 30-50%.</p>
+                        <div class="related-meta">
+                            <span class="related-meta__item">15 min read</span>
+                            <a href="#" class="read-more u-link-base">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="related-card card-base">
+                    <div class="related-card-image">
+                        <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shopify Apps" class="u-image-responsive">
+                    </div>
+                    <div class="related-card-content">
+                        <h3 class="u-heading-3">25 Must-Have Shopify Apps for 2024</h3>
+                        <p class="u-paragraph-text">The essential apps that will automate and grow your Shopify business.</p>
+                        <div class="related-meta">
+                            <span class="related-meta__item">18 min read</span>
+                            <a href="#" class="read-more u-link-base">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tocLinks = document.querySelectorAll('.toc-nav .toc-link');
+            const sections = document.querySelectorAll('.post-content section[id]');
+
+            const activationOffset = 180; // pixels from the top of the viewport
+
+            function updateActiveTocLink() {
+                let currentActiveId = 'introduction'; // Default to introduction if no other section is active
+
+                for (let i = sections.length - 1; i >= 0; i--) {
+                    const section = sections[i];
+                    const sectionTop = section.getBoundingClientRect().top;
+
+                    if (sectionTop <= activationOffset) {
+                        currentActiveId = section.getAttribute('id');
+                        break;
+                    }
+                }
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                const targetLink = document.querySelector(`.toc-nav a[href="#${currentActiveId}"]`);
+                if (targetLink) {
+                    targetLink.classList.add('active');
+                }
+            }
+
+            updateActiveTocLink();
+            window.addEventListener('scroll', updateActiveTocLink);
+            window.addEventListener('resize', updateActiveTocLink);
+
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+  <!-- Footer Include -->
+  <div id="footer-placeholder"></div>
+ <script>
+        // Function to load and append HTML, then execute its scripts
+        function loadAndAppend(url, placeholderId) {
+            return fetch(url)
+                .then(res => res.text())
+                .then(html => {
+                    const placeholder = document.getElementById(placeholderId);
+                    if (placeholder) {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = html;
+
+                        // Append HTML nodes (excluding scripts and styles)
+                        Array.from(tempDiv.children).forEach(node => {
+                            if (node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
+                                placeholder.appendChild(node.cloneNode(true));
+                            }
+                        });
+
+                        // Append styles to head (important for sticky to work early)
+                        Array.from(tempDiv.querySelectorAll('style')).forEach(oldStyle => {
+                            const newStyle = document.createElement('style');
+                            newStyle.textContent = oldStyle.textContent;
+                            document.head.appendChild(newStyle);
+                        });
+
+                        // Return the scripts to be executed later
+                        return Array.from(tempDiv.querySelectorAll('script'));
+
+                    } else {
+                        console.error(`${placeholderId} not found.`);
+                        return [];
+                    }
+                })
+                .catch(error => {
+                    console.error(`Error loading ${url}:`, error);
+                    const placeholder = document.getElementById(placeholderId);
+                    if (placeholder) placeholder.innerHTML = `<p style="color: red;">Failed to load ${url}.</p>`;
+                    return [];
+                });
+        }
+
+        // Load header, then run its scripts
+        loadAndAppend('header.html', 'header-placeholder')
+            .then(headerScripts => {
+                // Execute header scripts only after header HTML is in DOM
+                headerScripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => {
+                        newScript.setAttribute(attr.name, attr.value);
+                    });
+                    if (!oldScript.src) {
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+
+                // Now that header is loaded and its scripts executed,
+                // initialize the mobile nav script
+                const hamburgerIcon = document.getElementById('hamburger');
+                const mobileNav = document.getElementById('mobileNav');
+                const mobileNavClose = document.getElementById('mobileNavClose');
+                const mobileNavLinks = document.querySelectorAll('#mobileNav .mobile-nav-links a, #mobileNav .mobile-nav-buttons a');
+
+                function closeMobileMenu() {
+                    mobileNav.classList.remove('active');
+                    if (hamburgerIcon && hamburgerIcon.querySelector('i').classList.contains('fa-times')) {
+                        hamburgerIcon.querySelector('i').classList.remove('fa-times');
+                        hamburgerIcon.querySelector('i').classList.add('fa-bars');
+                    }
+                    document.body.style.overflow = ''; // Allow scrolling again
+                }
+
+                if (hamburgerIcon && mobileNav) {
+                    hamburgerIcon.addEventListener('click', function() {
+                        mobileNav.classList.toggle('active');
+                        this.querySelector('i').classList.toggle('fa-bars');
+                        this.querySelector('i').classList.toggle('fa-times');
+                        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : ''; // Prevent body scroll
+                    });
+                }
+
+                if (mobileNavClose && mobileNav && hamburgerIcon) {
+                    mobileNavClose.addEventListener('click', closeMobileMenu);
+                }
+
+                if (mobileNavLinks.length > 0 && mobileNav && hamburgerIcon) {
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', function() {
+                            if (mobileNav.classList.contains('active')) {
+                                closeMobileMenu();
+                            }
+                        });
+                    });
+                }
+            });
+
+        // Load footer
+        loadAndAppend('footer.html', 'footer-placeholder')
+            .then(footerScripts => {
+                // Execute footer scripts (if any)
+                footerScripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => {
+                        newScript.setAttribute(attr.name, attr.value);
+                    });
+                    if (!oldScript.src) {
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+            });
+    </script>

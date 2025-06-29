@@ -1,0 +1,403 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- Footer Columns -->
+        <div class="footer-columns">
+            <!-- About Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Developer Hasebur</h3>
+                <p class="footer-about">Creating beautiful, functional websites and applications with modern technologies and user-focused design.</p>
+                  <div class="social-links">
+                    <a href="https://www.facebook.com/developerhasebur" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/Hasebur_Dev" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/developer-hasebur/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@developerhasebur" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#showcase">Showcase</a></li>
+                    <li><a href="#services">Services</a></li>
+                   
+                    <li><a href="#tutorials">Tutorials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#contact">Web Development</a></li>
+                    <li><a href="#contact">Free Service</a></li>
+                   
+                    <li><a href="#contact">SEO Optimization</a></li>
+                    <li><a href="#contact">Consultation</a></li>
+                    <li><a href="#contact">Maintenance</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Contact Info</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> Khulna, Bangladesh</li>
+                    <li><i class="fas fa-envelope"></i> developerhasebur@gmail.com</li>
+                  
+                    <li><i class="fab fa-whatsapp"></i> +880 1983 119796</li>
+                </ul>
+                <div class="footer-newsletter" >
+                    <h4>Newsletter</h4>
+                    
+<div id="newsletterWrapperFooterBlog">
+    <form id="newsletterFormFooterBlog" class="newsletter-form" action="send_email.php" method="POST">
+        <input type="hidden" name="form_type" value="newsletter"> <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit" id="newsletterBtnFooterBlog">
+            <i class="fas fa-paper-plane"></i><span></span>
+        </button>
+    </form>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; <span id="year"></span> Developer Hasebur. All Rights Reserved.
+            </div>
+            <div class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="cookies.html">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer Styles */
+    .site-footer {
+        background: #2d3748;
+        color: #fff;
+        padding: 60px 0 0;
+        font-family: 'Rubik', sans-serif;
+        position: relative;
+    }
+
+    .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 40px);
+    }
+
+    .footer-columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .footer-column {
+        padding: 0 15px;
+    }
+
+    .footer-title {
+        color: #00bfa6;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .footer-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: #00bfa6;
+    }
+
+    .footer-about {
+        color: #e2e8f0;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: #00bfa6;
+        transform: translateY(-3px);
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: #e2e8f0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: inline-block;
+    }
+
+    .footer-links a:hover {
+        color: #00bfa6;
+        transform: translateX(5px);
+    }
+
+    .footer-contact {
+        list-style: none;
+        padding: 0;
+        color: #e2e8f0;
+    }
+
+    .footer-contact li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-contact i {
+        color: #00bfa6;
+        width: 20px;
+        text-align: center;
+    }
+
+    .footer-newsletter {
+        margin-top: 25px;
+    }
+
+    .footer-newsletter h4 {
+        color: #fff;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .newsletter-form {
+        display: flex;
+    }
+
+    .newsletter-form input {
+        flex: 1;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        font-size: 14px;
+    }
+
+    .newsletter-form button {
+        background: #00bfa6;
+        color: white;
+        border: none;
+        padding: 0 15px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+        background: #00a896;
+    }
+
+    .footer-bottom {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .copyright {
+        color: #a0aec0;
+        margin-bottom: 10px;
+    }
+
+    .footer-legal {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footer-legal a {
+        color: #a0aec0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-legal a:hover {
+        color: #00bfa6;
+    }
+
+    @media (max-width: 768px) {
+        .footer-columns {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        
+        .footer-legal {
+            flex-direction: column;
+            gap: 8px;
+        }
+            .footer-title::after {
+        left:50%;
+         transform: translateX(-50%);
+    }
+    .footer-title {
+    
+    text-align: center; 
+}
+.footer-links{
+  text-align: center;
+}
+.footer-contact {
+  display: block;
+   width: fit-content; 
+    margin: 0 auto; 
+
+    }
+    .footer-contact li {
+ 
+    justify-content: center; 
+}
+    }
+</style>
+
+<script>
+    // Auto-update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+<style>
+
+.submit-btn[disabled] {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+</style>
+<script>
+// Your handleAjaxForm function (no changes needed inside this function)
+function handleAjaxForm(formId, wrapperId, buttonId, originalText) {
+  const form = document.getElementById(formId);
+  const wrapper = document.getElementById(wrapperId);
+  const button = document.getElementById(buttonId);
+
+  // Crucial checks: Only initialize if elements are found on the page
+  if (!form || !wrapper || !button) {
+    // console.log(`Skipping form initialization for ID: ${formId} as elements were not found.`);
+    return;
+  }
+
+  const span = button.querySelector("span");
+
+  if (!span) {
+      console.error(`Span element not found inside button with ID: ${buttonId} for form ID: ${formId}. Cannot apply loading text.`);
+      return; 
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    button.disabled = true;
+    let dotCount = 0;
+    const loadingInterval = setInterval(() => {
+      dotCount = (dotCount + 1) % 4;
+      span.textContent = originalText + ".".repeat(dotCount);
+    }, 500);
+
+    const formData = new FormData(form);
+
+    fetch(form.action, { // form.action will be 'send_email.php'
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.text())
+    .then(response => {
+      clearInterval(loadingInterval);
+      button.disabled = false;
+      span.textContent = originalText;
+
+      let message = "";
+      let color = "";
+      const trimmedResponse = response.trim();
+
+      // Updated success/error message handling from send_email.php
+      if (trimmedResponse === "success_newsletter") { // From newsletter
+        message = "✅ Thank you for subscribing!";
+        color = "green";
+        form.reset();
+      } else if (trimmedResponse === "success_contact") { // From contact form
+        message = "✅ Your message has been sent!";
+        color = "green";
+        form.reset();
+      } else if (trimmedResponse === "error_sending_mail") { // Generic mailer error
+        message = "❌ Sorry, there was an issue sending your message. Please try again.";
+        color = "red";
+      } else { // PHP validation errors or unknown response
+        message = "❌ " + response;
+        color = "red";
+      }
+
+      wrapper.innerHTML = `<div class="form-response" style="color: ${color}; padding: 15px;">${message}</div>`;
+
+      setTimeout(() => {
+        wrapper.innerHTML = '';
+        wrapper.appendChild(form);
+      }, 3000);
+    })
+    .catch(() => {
+      clearInterval(loadingInterval);
+      button.disabled = false;
+      span.textContent = originalText;
+
+      wrapper.innerHTML = `<div class="form-response" style="color: red; padding: 15px;">❌ There was an error connecting. Please try again.</div>`;
+      setTimeout(() => {
+        wrapper.innerHTML = '';
+        wrapper.appendChild(form);
+      }, 3000);
+    });
+  });
+}
+
+// --- Calls for ALL unique form instances on your website ---
+
+// Homepage Contact Form (example, if it's the only one of its kind or has a unique ID)
+handleAjaxForm("projectFormHomepage", "contactWrapperHomepage", "contactBtnHomepage", "Send Message");
+
+// Newsletter Form in Main Content of Blog Page (with text button)
+handleAjaxForm("newsletterFormMain", "newsletterWrapperMain", "newsletterBtnMain", "Subscribe Now");
+
+// Newsletter Form in Footer of Blog Page (with icon-only button)
+handleAjaxForm("newsletterFormFooterBlog", "newsletterWrapperFooterBlog", "newsletterBtnFooterBlog", "");
+
+// If you have a *separate* newsletter in the footer on the homepage AND it uses different IDs:
+// handleAjaxForm("newsletterFormFooterHomepage", "newsletterWrapperFooterHomepage", "newsletterBtnFooterHomepage", "");
+
+// Ensure your `send_email.php` script is correctly configured to output "success_newsletter"
+// or "success_contact" for different forms, as per our last discussion.
+</script>

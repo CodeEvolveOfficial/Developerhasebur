@@ -1,0 +1,1684 @@
+  <div id="header-placeholder"></div>
+<main class="blog-container">
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <h1>Developer Insights & Tutorials</h1>
+                <p>Explore the latest web development tutorials, coding tips, and industry insights</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Area (Primary) -->
+    <section class="blog-content">
+        <div class="container">
+            <!-- Search and Filter Row -->
+            <div class="blog-controls">
+                <form class="blog-search" id="blogSearchForm">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" name="q" placeholder="Search posts...">
+                        <button type="button" class="clear-search-btn" id="clearSearchBtn" style="display: none;"><i class="fas fa-times-circle"></i></button>
+                    </div>
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="filter-options">
+                    <div class="category-tabs">
+                        <div class="tab active" data-category="all">All Posts</div>
+                        <div class="tab" data-category="html-css">HTML/CSS</div>
+                        <div class="tab" data-category="javascript">JavaScript</div>
+                        <div class="tab" data-category="react">React</div>
+                        <div class="tab" data-category="node">Node.js</div>
+                    </div>
+                    <div class="sort-options">
+                        <select id="sortSelect">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Layout (3 columns for primary posts) -->
+            <div class="grid-layout active" id="gridLayout">
+                <div class="posts-grid" id="postsGrid">
+                    <!-- Post 1 -->
+                    <article class="post-card" data-category="react" data-date="2023-06-10" data-popularity="85" data-title="React Hooks Explained" data-content="A comprehensive guide to React Hooks with practical examples">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="React Hooks">
+                            <div class="post-tag">New</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category">React</span>
+                                <span class="date">June 10, 2023</span>
+                                <span class="read-time">6 min read</span>
+                            </div>
+                            <h3><a href="post.html">React Hooks Explained: From useState to useReducer</a></h3>
+                            <p class="excerpt">A comprehensive guide to React Hooks with practical examples showing how to transform class components.</p>
+                            <div class="post-footer">
+                                <div class="author">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author">
+                                    <span>Sarah Johnson</span>
+                                </div>
+                                <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="post-card" data-category="html-css" data-date="2023-06-05" data-popularity="72" data-title="CSS Grid vs Flexbox" data-content="Learn the key differences between CSS Grid and Flexbox">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="CSS Grid vs Flexbox">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category">HTML/CSS</span>
+                                <span class="date">June 5, 2023</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                            <h3><a href="post.html">CSS Grid vs Flexbox: When to Use Each</a></h3>
+                            <p class="excerpt">Learn the key differences between CSS Grid and Flexbox with practical examples showing when each layout method is most appropriate.</p>
+                            <div class="post-footer">
+                                <div class="author">
+                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Author">
+                                    <span>Michael Chen</span>
+                                </div>
+                                <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="post-card" data-category="node" data-date="2023-05-28" data-popularity="68" data-title="Building RESTful APIs" data-content="Step-by-step tutorial on creating a complete REST API">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Node.js REST API">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category">Node.js</span>
+                                <span class="date">May 28, 2023</span>
+                                <span class="read-time">10 min read</span>
+                            </div>
+                            <h3><a href="post.html">Building RESTful APIs with Node.js and Express</a></h3>
+                            <p class="excerpt">Step-by-step tutorial on creating a complete REST API with Node.js, Express, and MongoDB including authentication.</p>
+                            <div class="post-footer">
+                                <div class="author">
+                                    <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Author">
+                                    <span>Emma Rodriguez</span>
+                                </div>
+                                <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="post-card" data-category="html-css" data-date="2023-05-20" data-popularity="54" data-title="Semantic HTML" data-content="Learn how proper use of semantic HTML elements">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Semantic HTML">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category">HTML/CSS</span>
+                                <span class="date">May 20, 2023</span>
+                                <span class="read-time">4 min read</span>
+                            </div>
+                            <h3><a href="post.html">Semantic HTML: Why It Matters for Accessibility</a></h3>
+                            <p class="excerpt">Learn how proper use of semantic HTML elements can improve your website's accessibility and search engine rankings.</p>
+                            <div class="post-footer">
+                                <div class="author">
+                                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Author">
+                                    <span>David Wilson</span>
+                                </div>
+                                <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="post-card" data-category="javascript" data-date="2023-05-10" data-popularity="79" data-title="Asynchronous JavaScript" data-content="Master asynchronous JavaScript with this in-depth guide">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1566837945700-30057527ade0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Asynchronous JavaScript">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category">JavaScript</span>
+                                <span class="date">May 10, 2023</span>
+                                <span class="read-time">9 min read</span>
+                            </div>
+                            <h3><a href="post.html">Asynchronous JavaScript: Callbacks, Promises, and Async/Await</a></h3>
+                            <p class="excerpt">Master asynchronous JavaScript with this in-depth guide covering all three approaches with practical examples and best practices.</p>
+                            <div class="post-footer">
+                                <div class="author">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author">
+                                    <span>Hasebur Rahman</span>
+                                </div>
+                                <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="post-card" data-category="react" data-date="2023-05-05" data-popularity="91" data-title="Optimizing React Performance" data-content="Learn advanced techniques to optimize your React applications">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="React Performance">
+                            <div class="post-tag">Popular</div>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category">React</span>
+                                <span class="date">May 5, 2023</span>
+                                <span class="read-time">8 min read</span>
+                            </div>
+                            <h3><a href="post.html">Optimizing React Performance: Tips and Techniques</a></h3>
+                            <p class="excerpt">Learn advanced techniques to optimize your React applications for better performance and smoother user experience.</p>
+                            <div class="post-footer">
+                                <div class="author">
+                                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Author">
+                                    <span>Lisa Kim</span>
+                                </div>
+                                <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 7 -->
+                    <article class="post-card" data-category="javascript" data-date="2023-04-20" data-popularity="65" data-title="JavaScript Closures Explained" data-content="A detailed explanation of JavaScript closures and their practical uses.">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1505373877845-8f2a2ceb9e11?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JavaScript Closures">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="category">JavaScript</span>
+                                <span class="date">April 20, 2023</span>
+                                <span class="read-time">7 min read</span>
+                            </div>
+                            <h3><a href="post.html">JavaScript Closures: Understanding Scope and Lexical Environment</a></h3>
+                            <p class="excerpt">A detailed explanation of JavaScript closures, how they work, and their practical uses in modern web development.</p>
+                            <div class="post-footer">
+                                <div class="author">
+                                    <img src="https://randomuser.me/api/portraits/men/19.jpg" alt="Author">
+                                    <span>Alex Green</span>
+                                </div>
+                                <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="prev" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                    <div class="page-numbers" id="mainPageNumbers">
+                        <button class="active">1</button>
+                        <button>2</button>
+                    </div>
+                    <button class="next">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post (Moved here) -->
+    <section class="featured-post">
+        <div class="container">
+            <div class="featured-post-card">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Featured Post">
+                    <span class="badge">Featured</span>
+                </div>
+                <div class="featured-content">
+                    <div class="post-meta">
+                        <span class="category">JavaScript</span>
+                        <span class="date">June 15, 2023</span>
+                        <span class="read-time">8 min read</span>
+                    </div>
+                    <h2><a href="post.html">Mastering Modern JavaScript: ES6+ Features You Should Be Using</a></h2>
+                    <p class="excerpt">Discover the most powerful ES6+ features that will make your JavaScript code cleaner, more efficient, and easier to maintain.</p>
+                    <div class="author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author">
+                        <span>By Hasebur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section: More Articles -->
+    <section class="blog-content more-articles-section">
+        <div class="container">
+            <h2 class="section-title">Special Articles</h2>
+            <!-- New 2-column layout for More Articles section -->
+            <div class="content-grid more-articles-content-grid">
+                <!-- Left Column for More Articles Posts (2 columns) -->
+                <div class="posts-column">
+                    <div class="posts-grid more-articles-posts-grid" id="moreArticlesGrid">
+                        <!-- More Article 1 -->
+                        <article class="post-card" data-category="html-css" data-date="2024-03-10" data-popularity="50" data-title="Modern CSS Layouts" data-content="Explore modern CSS layout techniques beyond Flexbox and Grid.">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1507721999472-8ed4421f4afc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern CSS Layouts">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="category">HTML/CSS</span>
+                                    <span class="date">March 10, 2024</span>
+                                    <span class="read-time">6 min read</span>
+                                </div>
+                                <h3><a href="post.html">Modern CSS Layouts: Subgrid, Container Queries & More</a></h3>
+                                <p class="excerpt">Explore modern CSS layout techniques beyond Flexbox and Grid, including subgrid and container queries.</p>
+                                <div class="post-footer">
+                                    <div class="author">
+                                        <img src="https://randomuser.me/api/portraits/women/70.jpg" alt="Author">
+                                        <span>Emily White</span>
+                                    </div>
+                                    <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- More Article 2 -->
+                        <article class="post-card" data-category="node" data-date="2024-03-01" data-popularity="45" data-title="Node.js Event Loop" data-content="Understanding the Node.js Event Loop and its implications.">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Node.js Event Loop">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="category">Node.js</span>
+                                    <span class="date">March 1, 2024</span>
+                                    <span class="read-time">8 min read</span>
+                                </div>
+                                <h3><a href="post.html">Deep Dive into the Node.js Event Loop</a></h3>
+                                <p class="excerpt">A comprehensive guide to understanding the Node.js Event Loop, its phases, and how it impacts your application's performance.</p>
+                                <div class="post-footer">
+                                    <div class="author">
+                                        <img src="https://randomuser.me/api/portraits/men/80.jpg" alt="Author">
+                                        <span>Chris Davis</span>
+                                    </div>
+                                    <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- More Article 3 -->
+                        <article class="post-card" data-category="javascript" data-date="2024-02-15" data-popularity="58" data-title="JavaScript Design Patterns" data-content="Common JavaScript design patterns for robust applications.">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1510915228385-fe9ee7535d5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JavaScript Design Patterns">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="category">JavaScript</span>
+                                    <span class="date">February 15, 2024</span>
+                                    <span class="read-time">10 min read</span>
+                                </div>
+                                <h3><a href="post.html">JavaScript Design Patterns: Building Scalable Applications</a></h3>
+                                <p class="excerpt">Explore common JavaScript design patterns like Module, Revealing Module, and Observer for building robust and scalable applications.</p>
+                                <div class="post-footer">
+                                    <div class="author">
+                                        <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Author">
+                                        <span>Olivia Brown</span>
+                                    </div>
+                                    <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- More Article 4 -->
+                        <article class="post-card" data-category="react" data-date="2024-02-01" data-popularity="62" data-title="React Context API" data-content="Master React Context API for state management.">
+                            <div class="post-image">
+                                <img src="https://images.unsplash.com/photo-1579403124614-197f69d8187d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="React Context API">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="category">React</span>
+                                    <span class="date">February 1, 2024</span>
+                                    <span class="read-time">7 min read</span>
+                                </div>
+                                <h3><a href="post.html">Mastering State Management with React Context API</a></h3>
+                                <p class="excerpt">A practical guide to using React's Context API for efficient and scalable state management in your applications.</p>
+                                <div class="post-footer">
+                                    <div class="author">
+                                        <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Author">
+                                        <span>Daniel Lee</span>
+                                    </div>
+                                    <a href="post.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+
+               
+                    </div>
+                </div>
+
+                   <!-- Trending Column (for More Articles section) -->
+                <div class="trending-column">
+                    <div class="trending-header">
+                        <h3>Trending Now</h3>
+                        <div class="trending-tabs">
+                            <button class="active" data-trending-period="week">This Week</button>
+                            <button data-trending-period="month">This Month</button>
+                        </div>
+                    </div>
+                    <div id="trendingThisWeekPosts" class="trending-posts">
+                        <!-- Trending Post 1 - Week -->
+                        <article class="trending-post" data-category="javascript" data-date="2023-05-10" data-read-time="9">
+                            <div class="trending-number">1</div>
+                            <div class="trending-content">
+                                <span class="category">JavaScript</span>
+                                <h4><a href="post.html">Asynchronous JavaScript: Callbacks to Async/Await</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">May 10, 2023</span>
+                                    <span class="read-time">9 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Trending Post 2 - Week -->
+                        <article class="trending-post" data-category="react" data-date="2023-05-05" data-read-time="8">
+                            <div class="trending-number">2</div>
+                            <div class="trending-content">
+                                <span class="category">React</span>
+                                <h4><a href="post.html">Optimizing React Performance</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">May 5, 2023</span>
+                                    <span class="read-time">8 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Trending Post 3 - Week -->
+                        <article class="trending-post" data-category="node" data-date="2023-05-28" data-read-time="10">
+                            <div class="trending-number">3</div>
+                            <div class="trending-content">
+                                <span class="category">Node.js</span>
+                                <h4><a href="post.html">Building RESTful APIs with Node.js</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">May 28, 2023</span>
+                                    <span class="read-time">10 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Trending Post 4 - Week -->
+                        <article class="trending-post" data-category="react" data-date="2023-06-10" data-read-time="6">
+                            <div class="trending-number">4</div>
+                            <div class="trending-content">
+                                <span class="category">React</span>
+                                <h4><a href="post.html">React Hooks Explained</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">June 10, 2023</span>
+                                    <span class="read-time">6 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Trending Post 5 - Week -->
+                        <article class="trending-post" data-category="html-css" data-date="2023-06-05" data-read-time="5">
+                            <div class="trending-number">5</div>
+                            <div class="trending-content">
+                                <span class="category">HTML/CSS</span>
+                                <h4><a href="post.html">CSS Grid vs Flexbox</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">June 5, 2023</span>
+                                    <span class="read-time">5 min read</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div id="trendingThisMonthPosts" class="trending-posts" style="display: none;">
+                        <!-- Trending Post 1 - Month -->
+                        <article class="trending-post" data-category="node" data-date="2024-03-01" data-read-time="8">
+                            <div class="trending-number">1</div>
+                            <div class="trending-content">
+                                <span class="category">Node.js</span>
+                                <h4><a href="post.html">Deep Dive into the Node.js Event Loop</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">March 1, 2024</span>
+                                    <span class="read-time">8 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Trending Post 2 - Month -->
+                        <article class="trending-post" data-category="javascript" data-date="2024-02-15" data-read-time="10">
+                            <div class="trending-number">2</div>
+                            <div class="trending-content">
+                                <span class="category">JavaScript</span>
+                                <h4><a href="post.html">JavaScript Design Patterns: Building Scalable Applications</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">February 15, 2024</span>
+                                    <span class="read-time">10 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Trending Post 3 - Month -->
+                        <article class="trending-post" data-category="react" data-date="2024-02-01" data-read-time="7">
+                            <div class="trending-number">3</div>
+                            <div class="trending-content">
+                                <span class="category">React</span>
+                                <h4><a href="post.html">Mastering State Management with React Context API</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">February 1, 2024</span>
+                                    <span class="read-time">7 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Trending Post 4 - Month -->
+                        <article class="trending-post" data-category="html-css" data-date="2024-01-20" data-read-time="9">
+                            <div class="trending-number">4</div>
+                            <div class="trending-content">
+                                <span class="category">HTML/CSS</span>
+                                <h4><a href="post.html">Web Accessibility: Best Practices for Inclusive Design</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">January 20, 2024</span>
+                                    <span class="read-time">9 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Trending Post 5 - Month -->
+                        <article class="trending-post" data-category="node" data-date="2024-01-05" data-read-time="11">
+                            <div class="trending-number">5</div>
+                            <div class="trending-content">
+                                <span class="category">Node.js</span>
+                                <h4><a href="post.html">Secure User Authentication with Node.js and Passport.js</a></h4>
+                                <div class="post-meta">
+                                    <span class="date">January 5, 2024</span>
+                                    <span class="read-time">11 min read</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="newsletter-widget">
+                        <h4>Get Updates</h4>
+                        <p>Subscribe to our newsletter for the latest tutorials and resources</p>
+<div id="newsletterWrapperMain">
+    <form id="newsletterFormMain" class="newsletter-form" action="send_email.php" method="POST">
+        <input type="hidden" name="form_type" value="newsletter"> <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit" id="newsletterBtnMain">
+          <span>Subscribe</span>
+        </button>
+    </form>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<style>
+    /* Blog Page Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+    :root {
+        --primary-color: #00bfa6;
+        --primary-dark: #00a896;
+        --text-color: #333;
+        --light-gray: #f5f7fa;
+        --medium-gray: #e4e8eb;
+        --dark-gray: #4a5568;
+        --white: #fff;
+        --black: #111;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Rubik', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: var(--light-gray);
+        padding-top: 80px; /* Adjust if you have a fixed header */
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 clamp(16px, 4vw, 32px);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    button {
+        cursor: pointer;
+        font-family: inherit;
+        border: none; /* Ensure buttons don't have default borders */
+        background: none; /* Ensure buttons don't have default backgrounds */
+    }
+
+    /* Blog Hero Section */
+    .blog-hero {
+        background: linear-gradient(135deg, #00bfa6 0%, #008c7a 100%);
+        color: var(--white);
+        padding: 40px 0;
+        text-align: center;
+        margin-top: -25px;
+    }
+
+    .blog-hero h1 {
+        font-size: clamp(2rem, 5vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 16px;
+        line-height: 1.2;
+    }
+
+    .blog-hero p {
+        font-size: clamp(1rem, 2vw, 1.1rem);
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+    }
+
+    /* Featured Post */
+    .featured-post {
+        padding: 40px 0 30px;
+    }
+
+    .featured-post-card {
+        display: flex;
+        flex-direction: column; /* Default to column for small screens */
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .featured-image {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+        flex-shrink: 0; /* Prevent image from shrinking on smaller screens */
+    }
+
+    .featured-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .featured-post-card:hover .featured-image img {
+        transform: scale(1.03);
+    }
+
+    .badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .featured-content {
+        padding: 25px;
+        flex-grow: 1; /* Allow content to take available space */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Vertically center content if space allows */
+    }
+
+    .post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        color: var(--dark-gray);
+    }
+
+    .post-meta .category {
+        background: var(--light-gray);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-weight: 500;
+    }
+
+    .featured-content h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 16px;
+        line-height: 1.3;
+    }
+
+    .featured-content h2 a:hover {
+        color: var(--primary-color);
+    }
+
+    .excerpt {
+        color: var(--dark-gray);
+        margin-bottom: 24px;
+        font-size: 1rem;
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .author img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .author span {
+        font-weight: 500;
+    }
+
+    /* Blog Content Area */
+    .blog-content {
+        padding: 20px 0 60px;
+    }
+
+    /* Blog Controls (Search, Filter, Sort) */
+    .blog-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .blog-search {
+        display: flex;
+        flex: 1;
+        min-width: 250px;
+        max-width: 500px;
+        position: relative;
+    }
+
+    .search-input-wrapper {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .blog-search input {
+        flex: 1;
+        padding: 12px 20px;
+        border: 1px solid var(--medium-gray);
+        border-radius: 6px 0 0 6px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        padding-right: 40px; /* Space for the clear button */
+    }
+
+    .blog-search input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(0, 191, 166, 0.2);
+    }
+
+    .clear-search-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: var(--dark-gray);
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+        line-height: 1;
+    }
+
+    .clear-search-btn:hover {
+        color: var(--primary-color);
+    }
+
+    .blog-search button[type="submit"] {
+        background: var(--primary-color);
+        color: var(--white);
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 6px 6px 0;
+        font-size: 16px;
+        transition: background 0.3s ease;
+    }
+
+    .blog-search button[type="submit"]:hover {
+        background: var(--primary-dark);
+    }
+
+    .filter-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .category-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .category-tabs .tab {
+        padding: 8px 16px;
+        background: rgba(0, 191, 166, 0.1);
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .category-tabs .tab:hover {
+        background: rgba(0, 191, 166, 0.2);
+    }
+
+    .category-tabs .tab.active {
+        background: var(--primary-color);
+        color: var(--white);
+    }
+
+    .sort-options select {
+        padding: 8px 12px;
+        border: 1px solid var(--medium-gray);
+        border-radius: 6px;
+        font-size: 14px;
+        background-color: var(--white);
+        cursor: pointer;
+    }
+
+    .sort-options select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(0, 191, 166, 0.2);
+    }
+
+    /* Primary Grid Layout (3 columns) */
+    .grid-layout {
+        display: block; /* Always visible as per current design */
+    }
+
+    #gridLayout .posts-grid { /* Specific for the primary posts grid */
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 columns on larger screens */
+        gap: 30px;
+    }
+
+    .post-card {
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .post-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .post-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .post-card:hover .post-image img {
+        transform: scale(1.05);
+    }
+
+    .post-tag {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .post-content {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .post-content h3 {
+        font-size: 1.25rem;
+        margin: 12px 0;
+        line-height: 1.4;
+    }
+
+    .post-content h3 a:hover {
+        color: var(--primary-color);
+    }
+
+    .excerpt {
+        color: var(--dark-gray);
+        margin-bottom: 24px;
+        font-size: 1rem;
+    }
+
+    .read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--primary-color);
+        font-weight: 500;
+        margin-top: auto; /* Push to bottom of content */
+    }
+
+    .read-more:hover {
+        color: var(--primary-dark);
+    }
+
+    .post-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px; /* Space between excerpt and footer */
+        padding-top: 15px;
+        border-top: 1px solid var(--light-gray);
+    }
+
+    /* Pagination */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .pagination button {
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: 500;
+        background: var(--light-gray);
+        color: var(--dark-gray);
+        transition: all 0.3s ease;
+    }
+
+    .pagination button:hover:not(:disabled) {
+        background: var(--medium-gray);
+    }
+
+    .pagination button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .page-numbers {
+        display: flex;
+        gap: 8px;
+    }
+
+    .page-numbers button {
+        min-width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .page-numbers button.active {
+        background: var(--primary-color);
+        color: var(--white);
+    }
+
+    /* Trending Column (General Styling - used in the new section) */
+    .trending-column {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .trending-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .trending-header h3 {
+        font-size: 1.25rem;
+        color: var(--dark-gray);
+    }
+
+    .trending-tabs {
+        display: flex;
+        gap: 8px;
+    }
+
+    .trending-tabs button {
+        padding: 6px 12px;
+        font-size: 13px;
+        background: transparent;
+        border: none;
+        color: var(--dark-gray);
+        font-weight: 500;
+    }
+
+    .trending-tabs button.active {
+        color: var(--primary-color);
+        position: relative;
+    }
+
+    .trending-tabs button.active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--primary-color);
+    }
+
+    .trending-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .trending-post {
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        background: var(--white);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .trending-post:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .trending-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        min-width: 30px;
+    }
+
+    .trending-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .trending-content .category {
+        font-size: 12px;
+        background: var(--light-gray);
+        padding: 2px 8px;
+        border-radius: 12px;
+        align-self: flex-start;
+    }
+
+    .trending-content h4 {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .trending-content h4 a:hover {
+        color: var(--primary-color);
+    }
+
+    .trending-content .post-meta {
+        display: flex;
+        gap: 12px;
+        font-size: 12px;
+        color: var(--dark-gray);
+        margin: 0;
+    }
+
+    /* Newsletter Widget */
+    .newsletter-widget {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .newsletter-widget h4 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
+
+    .newsletter-widget p {
+        font-size: 14px;
+        color: var(--dark-gray);
+        margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .newsletter-form input {
+        padding: 12px 15px;
+        border: 1px solid var(--medium-gray);
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    .newsletter-form input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+
+    .newsletter-form button {
+        padding: 12px;
+        background: var(--primary-color);
+        color: var(--white);
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: background 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+        background: var(--primary-dark);
+    }
+
+    /* New Section: More Articles Specific Styles */
+    .more-articles-section {
+        padding-top: 60px; /* Add some space above this new section */
+    }
+
+    .more-articles-section .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
+        font-weight: 700;
+        color: var(--text-color);
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .more-articles-content-grid {
+        display: grid;
+        grid-template-columns: 1fr 300px; /* Left column for posts, right for trending */
+        gap: 40px;
+    }
+
+    .more-articles-posts-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Explicitly 2 columns for posts */
+        gap: 30px;
+    }
+
+    /* Hide the old trending-layout if it still exists in the DOM */
+    .trending-layout {
+        display: none;
+    }
+
+    /* Responsive Styles */
+
+    /* For screens larger than 1200px, ensure main grid remains 3 columns */
+    @media (min-width: 1200px) {
+        #gridLayout .posts-grid {
+            grid-template-columns: repeat(3, 1fr); /* Force 3 columns on very large screens */
+        }
+    }
+
+    /* For screens between 992px and 1199px (medium desktops/large tablets) */
+    @media (min-width: 992px) and (max-width: 1199px) {
+        #gridLayout .posts-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjust min-width for 3 columns */
+        }
+    }
+
+    /* For screens smaller than 992px (tablets and smaller desktops) */
+    @media (max-width: 991px) {
+        /* Featured Post - switch to horizontal layout if enough space */
+        .featured-post-card {
+            flex-direction: row;
+            align-items: center;
+        }
+        .featured-image {
+            width: 40%; /* Take up 40% width */
+            height: auto; /* Adjust height automatically */
+            min-height: 200px; /* Ensure a minimum height */
+        }
+        .featured-content {
+            width: 60%; /* Take up 60% width */
+            padding: 20px;
+        }
+        .featured-content h2 {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        }
+
+        /* Primary blog content grid (main posts) */
+        #gridLayout .posts-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjust for 2-3 columns */
+        }
+
+        /* More Articles section - switch to single column, hide trending */
+        .more-articles-content-grid {
+            grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        }
+
+        .more-articles-section .trending-column {
+            display: block; /* Show trending column, but it will be below posts */
+            margin-top: 40px; /* Add space when stacked */
+        }
+    }
+
+    /* For screens smaller than 768px (larger phones, small tablets) */
+    @media (max-width: 767px) {
+        .featured-post-card {
+            flex-direction: column; /* Stack featured post on smaller screens */
+        }
+        .featured-image {
+            width: 100%;
+            height: 200px;
+        }
+        .featured-content {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .blog-hero {
+            padding: 30px 0;
+        }
+
+        .blog-controls {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .blog-search {
+            max-width: 100%;
+        }
+
+        .category-tabs {
+            justify-content: flex-start;
+            overflow-x: auto; /* Allow horizontal scrolling for many tabs */
+            padding-bottom: 10px;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        }
+        .category-tabs::-webkit-scrollbar {
+            height: 6px;
+        }
+        .category-tabs::-webkit-scrollbar-thumb {
+            background-color: var(--medium-gray);
+            border-radius: 3px;
+        }
+
+        /* Primary blog content grid becomes 2 columns */
+        #gridLayout .posts-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 2 columns */
+        }
+
+        /* More Articles section - posts grid becomes 1 column */
+        .more-articles-posts-grid {
+            grid-template-columns: 1fr; /* Force 1 column on smaller phones */
+        }
+
+        .pagination {
+            gap: 6px;
+        }
+
+        .pagination button {
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+
+        .category-tabs .tab {
+            padding: 6px 12px;
+            font-size: 13px;
+        }
+    }
+
+    /* For screens smaller than 576px (most mobile phones) */
+    @media (max-width: 575px) {
+        /* Primary blog content grid becomes 1 column */
+        #gridLayout .posts-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get references to key DOM elements for the primary blog section
+        const searchInput = document.getElementById('searchInput');
+        const blogSearchForm = document.getElementById('blogSearchForm');
+        const clearSearchBtn = document.getElementById('clearSearchBtn');
+        const categoryTabs = document.querySelectorAll('.category-tabs .tab');
+        const sortSelect = document.getElementById('sortSelect');
+        const postsGrid = document.getElementById('postsGrid'); // Main posts grid
+        const mainPagination = document.querySelector('.pagination');
+        const mainPrevButton = mainPagination ? mainPagination.querySelector('.prev') : null;
+        const mainNextButton = mainPagination ? mainPagination.querySelector('.next') : null;
+        const mainPageNumbersContainer = mainPagination ? mainPagination.querySelector('#mainPageNumbers') : null;
+
+        // Store all original post cards from the main blog section
+        const allPostCards = Array.from(postsGrid ? postsGrid.querySelectorAll('.post-card') : []);
+
+        // State variables for filtering and pagination of the main blog section
+        let currentCategory = 'all';
+        let currentSearchTerm = '';
+        let currentPage = 1;
+        let currentSortOrder = 'newest'; // Initialize with a default sort order
+        const postsPerPage = 6; // Showing 6 posts per page for 3-column layout (2 rows)
+
+        /**
+         * Renders the posts for the primary blog section based on current filters, sort order, and pagination.
+         * This is the central function that orchestrates the display of main posts.
+         */
+        function renderPosts() {
+            // 1. Filter posts based on category and search term
+            let filteredPosts = allPostCards.filter(card => {
+                const categoryMatch = currentCategory === 'all' || card.dataset.category === currentCategory;
+                // Use dataset properties for title and content as they were added to HTML
+                const title = card.dataset.title ? card.dataset.title.toLowerCase() : '';
+                const content = card.dataset.content ? card.dataset.content.toLowerCase() : '';
+                const searchTermMatch = title.includes(currentSearchTerm) || content.includes(currentSearchTerm);
+                return categoryMatch && searchTermMatch;
+            });
+
+            // 2. Sort posts based on selected order
+            filteredPosts.sort((a, b) => {
+                if (currentSortOrder === 'newest') {
+                    return new Date(b.dataset.date) - new Date(a.dataset.date);
+                } else if (currentSortOrder === 'oldest') {
+                    return new Date(a.dataset.date) - new Date(b.dataset.date);
+                } else if (currentSortOrder === 'popular') {
+                    // Ensure popularity is parsed as integer for comparison
+                    return parseInt(b.dataset.popularity || 0) - parseInt(a.dataset.popularity || 0);
+                }
+                return 0; // No sorting
+            });
+
+            // Clear current grid display before appending
+            if (postsGrid) {
+                postsGrid.innerHTML = '';
+            }
+
+            // Check if no posts are found after filtering
+            if (filteredPosts.length === 0) {
+                const noResultsMessage = document.createElement('div');
+                noResultsMessage.classList.add('no-results-message');
+                noResultsMessage.style.cssText = `
+                    text-align: center;
+                    font-size: 1.2rem;
+                    color: var(--dark-gray);
+                    padding: 40px;
+                    grid-column: 1 / -1; /* Span across all columns in the grid */
+                `;
+                noResultsMessage.innerHTML = '<p><i class="fas fa-exclamation-circle"></i> No posts found matching your criteria.</p>';
+                if (postsGrid) {
+                    postsGrid.appendChild(noResultsMessage);
+                }
+                // Hide pagination if no results
+                if (mainPagination) {
+                    mainPagination.style.display = 'none';
+                }
+                return; // Exit function as no posts to render
+            } else {
+                // Show pagination if there are results
+                if (mainPagination) {
+                    mainPagination.style.display = 'flex';
+                }
+            }
+
+
+            // 3. Calculate total pages for pagination
+            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+            // Ensure current page doesn't exceed total pages after filtering/sorting
+            if (currentPage > totalPages && totalPages > 0) {
+                currentPage = totalPages;
+            } else if (totalPages === 0) {
+                currentPage = 0; // No pages if no posts
+            } else if (currentPage === 0 && totalPages > 0) {
+                currentPage = 1; // Reset to first page if it was 0 and posts exist
+            }
+
+            // 4. Update pagination buttons and page numbers
+            if (mainPagination) { // Only update pagination if the element exists
+                if (mainPrevButton) mainPrevButton.disabled = currentPage <= 1;
+                if (mainNextButton) mainNextButton.disabled = currentPage >= totalPages;
+
+                if (mainPageNumbersContainer) {
+                    mainPageNumbersContainer.innerHTML = ''; // Clear existing page numbers
+                    if (totalPages > 0) { // Only show page numbers if there are pages
+                        for (let i = 1; i <= totalPages; i++) {
+                            const button = document.createElement('button');
+                            button.textContent = i;
+                            if (i === currentPage) {
+                                button.classList.add('active');
+                            }
+                            button.addEventListener('click', function() {
+                                currentPage = i;
+                                renderPosts(); // Re-render posts on page change
+                                // Scroll to the top of the posts grid for better UX
+                                if (postsGrid) {
+                                    window.scrollTo({ top: postsGrid.offsetTop - 100, behavior: 'smooth' });
+                                }
+                            });
+                            mainPageNumbersContainer.appendChild(button);
+                        }
+                    }
+                }
+            }
+
+
+            // 5. Display only the posts for the current page
+            const startIndex = (currentPage - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+
+            filteredPosts.slice(startIndex, endIndex).forEach(card => {
+                card.style.display = 'block'; // Ensure it's visible
+                postsGrid.appendChild(card); // Re-append to maintain order
+            });
+        }
+
+        // --- Event Listeners ---
+
+        // Handle header search form submission (if a header search bar exists)
+        // This function is defined in the HTML, but we need to ensure the blog page's search input is updated
+        // and the posts are rendered if a search term is passed via sessionStorage.
+
+        // Blog search input and form submission
+        if (blogSearchForm) {
+            blogSearchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                currentSearchTerm = searchInput.value.toLowerCase();
+                currentPage = 1; // Reset to first page on new search
+                renderPosts();
+            });
+        }
+
+        if (searchInput) {
+            // Show/hide clear button based on input content
+            searchInput.addEventListener('input', function() {
+                currentSearchTerm = searchInput.value.toLowerCase();
+                currentPage = 1; // Reset to first page on new search
+                renderPosts();
+                if (clearSearchBtn) {
+                    clearSearchBtn.style.display = this.value.length > 0 ? 'block' : 'none';
+                }
+            });
+        }
+
+        // Clear search button functionality
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', function() {
+                if (searchInput) {
+                    searchInput.value = '';
+                    currentSearchTerm = '';
+                    currentPage = 1; // Reset to first page
+                    renderPosts();
+                    clearSearchBtn.style.display = 'none'; // Hide button after clearing
+                }
+            });
+        }
+
+        // Category Tab Filtering
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                currentCategory = this.dataset.category;
+                currentSearchTerm = searchInput.value.toLowerCase(); // Re-apply search filter
+                currentPage = 1; // Reset to first page on category change
+                renderPosts();
+            });
+        });
+
+        // Sort Options
+        if (sortSelect) {
+            sortSelect.addEventListener('change', function() {
+                currentSortOrder = this.value;
+                currentPage = 1; // Reset to first page on sort change
+                renderPosts();
+            });
+        }
+
+        // Pagination button events
+        if (mainPrevButton) {
+            mainPrevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderPosts();
+                    if (postsGrid) {
+                        window.scrollTo({ top: postsGrid.offsetTop - 100, behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+
+        if (mainNextButton) {
+            mainNextButton.addEventListener('click', () => {
+                // Recalculate total pages based on current filters for next button logic
+                const totalPages = Math.ceil(allPostCards.filter(card => {
+                    const categoryMatch = currentCategory === 'all' || card.dataset.category === currentCategory;
+                    const title = card.dataset.title ? card.dataset.title.toLowerCase() : '';
+                    const content = card.dataset.content ? card.dataset.content.toLowerCase() : '';
+                    const searchTermMatch = title.includes(currentSearchTerm) || content.includes(currentSearchTerm);
+                    return categoryMatch && searchTermMatch;
+                }).length / postsPerPage);
+
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderPosts();
+                    if (postsGrid) {
+                        window.scrollTo({ top: postsGrid.offsetTop - 100, behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+
+        // --- Logic to handle search term from header (sessionStorage) ---
+        const storedSearchTerm = sessionStorage.getItem('blogSearchTerm');
+        if (storedSearchTerm) {
+            if (searchInput) {
+                searchInput.value = storedSearchTerm;
+                currentSearchTerm = storedSearchTerm.toLowerCase();
+                if (clearSearchBtn) {
+                    clearSearchBtn.style.display = 'block'; // Show clear button if there's a stored term
+                }
+            }
+            sessionStorage.removeItem('blogSearchTerm'); // Clear after use
+        }
+
+        // Initial render of posts for the primary section when the page loads
+        renderPosts();
+
+        // --- Trending posts for "More Articles" section ---
+        const trendingThisWeekPosts = document.getElementById('trendingThisWeekPosts');
+        const trendingThisMonthPosts = document.getElementById('trendingThisMonthPosts');
+        const moreArticlesTrendingTabs = document.querySelectorAll('.more-articles-section .trending-tabs button');
+
+        // Event listeners for "More Articles" trending tabs
+        moreArticlesTrendingTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                moreArticlesTrendingTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                const period = this.dataset.trendingPeriod;
+                if (period === 'week') {
+                    if (trendingThisWeekPosts) trendingThisWeekPosts.style.display = 'flex';
+                    if (trendingThisMonthPosts) trendingThisMonthPosts.style.display = 'none';
+                } else if (period === 'month') {
+                    if (trendingThisWeekPosts) trendingThisWeekPosts.style.display = 'none';
+                    if (trendingThisMonthPosts) trendingThisMonthPosts.style.display = 'flex';
+                }
+            });
+        });
+
+        // Initial display for "More Articles" trending posts (default to 'week')
+        if (trendingThisWeekPosts) trendingThisWeekPosts.style.display = 'flex';
+        if (trendingThisMonthPosts) trendingThisMonthPosts.style.display = 'none';
+
+
+
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer Include -->
+  <div id="footer-placeholder"></div>
+ <script>
+        // Function to load and append HTML, then execute its scripts
+        function loadAndAppend(url, placeholderId) {
+            return fetch(url)
+                .then(res => res.text())
+                .then(html => {
+                    const placeholder = document.getElementById(placeholderId);
+                    if (placeholder) {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = html;
+
+                        // Append HTML nodes (excluding scripts and styles)
+                        Array.from(tempDiv.children).forEach(node => {
+                            if (node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
+                                placeholder.appendChild(node.cloneNode(true));
+                            }
+                        });
+
+                        // Append styles to head (important for sticky to work early)
+                        Array.from(tempDiv.querySelectorAll('style')).forEach(oldStyle => {
+                            const newStyle = document.createElement('style');
+                            newStyle.textContent = oldStyle.textContent;
+                            document.head.appendChild(newStyle);
+                        });
+
+                        // Return the scripts to be executed later
+                        return Array.from(tempDiv.querySelectorAll('script'));
+
+                    } else {
+                        console.error(`${placeholderId} not found.`);
+                        return [];
+                    }
+                })
+                .catch(error => {
+                    console.error(`Error loading ${url}:`, error);
+                    const placeholder = document.getElementById(placeholderId);
+                    if (placeholder) placeholder.innerHTML = `<p style="color: red;">Failed to load ${url}.</p>`;
+                    return [];
+                });
+        }
+
+        // Load header, then run its scripts
+        loadAndAppend('header.html', 'header-placeholder')
+            .then(headerScripts => {
+                // Execute header scripts only after header HTML is in DOM
+                headerScripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => {
+                        newScript.setAttribute(attr.name, attr.value);
+                    });
+                    if (!oldScript.src) {
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+
+                // Now that header is loaded and its scripts executed,
+                // initialize the mobile nav script
+                const hamburgerIcon = document.getElementById('hamburger');
+                const mobileNav = document.getElementById('mobileNav');
+                const mobileNavClose = document.getElementById('mobileNavClose');
+                const mobileNavLinks = document.querySelectorAll('#mobileNav .mobile-nav-links a, #mobileNav .mobile-nav-buttons a');
+
+                function closeMobileMenu() {
+                    mobileNav.classList.remove('active');
+                    if (hamburgerIcon && hamburgerIcon.querySelector('i').classList.contains('fa-times')) {
+                        hamburgerIcon.querySelector('i').classList.remove('fa-times');
+                        hamburgerIcon.querySelector('i').classList.add('fa-bars');
+                    }
+                    document.body.style.overflow = ''; // Allow scrolling again
+                }
+
+                if (hamburgerIcon && mobileNav) {
+                    hamburgerIcon.addEventListener('click', function() {
+                        mobileNav.classList.toggle('active');
+                        this.querySelector('i').classList.toggle('fa-bars');
+                        this.querySelector('i').classList.toggle('fa-times');
+                        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : ''; // Prevent body scroll
+                    });
+                }
+
+                if (mobileNavClose && mobileNav && hamburgerIcon) {
+                    mobileNavClose.addEventListener('click', closeMobileMenu);
+                }
+
+                if (mobileNavLinks.length > 0 && mobileNav && hamburgerIcon) {
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', function() {
+                            if (mobileNav.classList.contains('active')) {
+                                closeMobileMenu();
+                            }
+                        });
+                    });
+                }
+            });
+
+        // Load footer
+        loadAndAppend('footer.html', 'footer-placeholder')
+            .then(footerScripts => {
+                // Execute footer scripts (if any)
+                footerScripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => {
+                        newScript.setAttribute(attr.name, attr.value);
+                    });
+                    if (!oldScript.src) {
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+            });
+    </script>

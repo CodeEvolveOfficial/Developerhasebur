@@ -1,0 +1,10 @@
+Write me html blog post about trending topic of shopify.
+First write the post name.
+Then write the post in html with css js. They will be like this <style><section id="introduction"></section> tag , no need body and other tags and use unique class. and  Make 8 section with section ids with full of iinformative and attractive content. make each sections very long, minimum 5 <p> in each except introduction section.
+The write those section ids like this in another code:
+ <li class="u-list-item toc-nav__list-item"><a href="#introduction" class="toc-link u-link-base">Introduction</a></li>
+ <li class="u-list-item toc-nav__list-item"><a href="#analytics-tracking" class="toc-link u-link-base">📊 Analytics & Tracking</a></li>
+ <li class="u-list-item toc-nav__list-item"><a href="#conclusion" class="toc-link u-link-base">Conclusion</a></li>
+
+
+Try to make the post as long as possible
