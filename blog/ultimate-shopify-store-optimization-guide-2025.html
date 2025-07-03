@@ -805,10 +805,15 @@
             <div class="subscribe-widget card-base">
                 <h4 class="u-heading-4"><i class="fas fa-paper-plane"></i> Get Shopify Tips</h4>
                 <p class="u-paragraph-text">Join 15,000+ store owners getting weekly optimization strategies.</p>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Your best email" required class="c-form-input">
-                    <button type="submit" class="c-button-primary">Subscribe <i class="fas fa-arrow-right"></i></button>
-                </form>
+                     <div id="subscribeWrapperGeneric">
+  <form class="subscribe-form">
+    <input type="hidden" name="form_type" value="subscription">
+    <input type="email" name="email" placeholder="Your best email" required class="c-form-input">
+    <button type="submit" class="c-button-primary">
+      Subscribe <i class="fas fa-arrow-right"></i>
+    </button>
+  </form>
+</div>
             </div>
         </aside>
     </div>
