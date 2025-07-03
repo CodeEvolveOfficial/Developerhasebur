@@ -306,15 +306,26 @@
 <script>
 const GOOGLE_FORM_URL = "https://script.google.com/macros/s/AKfycbzOjZcjIC3c-zu9Ytxvsw3LcJAMjC30JuI3scuLMgZAxrTypr3_Nd40rDEthjKVnkwPGg/exec";
 
-// Helper function to handle Google Forms + inline feedback
-function handleFormSubmissionV2(formSelector, wrapperSelector, successMessage) {
+// Enhanced version with animated loading and inline success message
+function handleFormSubmissionV3(formSelector, wrapperSelector, buttonSelector, originalText, successMessage) {
   const form = document.querySelector(formSelector);
   const wrapper = document.querySelector(wrapperSelector);
-  if (!form || !wrapper) return;
+  const button = document.querySelector(buttonSelector);
+  if (!form || !wrapper || !button) return;
+
+  const span = button.querySelector("span") || button;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     const formData = new FormData(form);
+
+    // Start loading animation
+    button.disabled = true;
+    let dotCount = 0;
+    const loadingInterval = setInterval(() => {
+      dotCount = (dotCount + 1) % 4;
+      span.textContent = originalText + ".".repeat(dotCount);
+    }, 500);
 
     fetch(GOOGLE_FORM_URL, {
       method: "POST",
@@ -322,32 +333,37 @@ function handleFormSubmissionV2(formSelector, wrapperSelector, successMessage) {
     })
       .then((res) => res.json())
       .then((data) => {
-        // Build message div
+        clearInterval(loadingInterval);
+        button.disabled = false;
+        span.textContent = originalText;
+        form.reset();
+
         const msg = document.createElement("div");
         msg.className = "form-response";
         msg.style.color = "green";
         msg.style.padding = "15px";
         msg.textContent = successMessage;
 
-        // Replace form with message temporarily
         wrapper.innerHTML = '';
         wrapper.appendChild(msg);
 
-        // Reset form & restore after 3 seconds
-        form.reset();
         setTimeout(() => {
           wrapper.innerHTML = '';
           wrapper.appendChild(form);
         }, 3000);
       })
       .catch((err) => {
-        const errMsg = document.createElement("div");
-        errMsg.className = "form-response";
-        errMsg.style.color = "red";
-        errMsg.style.padding = "15px";
-        errMsg.textContent = "❌ Something went wrong!";
+        clearInterval(loadingInterval);
+        button.disabled = false;
+        span.textContent = originalText;
+
+        const msg = document.createElement("div");
+        msg.className = "form-response";
+        msg.style.color = "red";
+        msg.style.padding = "15px";
+        msg.textContent = "❌ Something went wrong!";
         wrapper.innerHTML = '';
-        wrapper.appendChild(errMsg);
+        wrapper.appendChild(msg);
 
         setTimeout(() => {
           wrapper.innerHTML = '';
@@ -359,9 +375,30 @@ function handleFormSubmissionV2(formSelector, wrapperSelector, successMessage) {
   });
 }
 
-// Call for each form you want to enhance
-handleFormSubmissionV2("#projectFormHomepage", "#contactWrapperHomepage", "✅ Your message has been sent!");
-handleFormSubmissionV2("#newsletterFormFooterBlog", "#newsletterWrapperFooterBlog", "✅ Thank you for subscribing!");
-handleFormSubmissionV2(".subscribe-form", "#subscribeWrapperGeneric", "✅ Thank you for subscribing!");
+// Attach to each form with wrapper and button IDs
+handleFormSubmissionV3(
+  "#projectFormHomepage",
+  "#contactWrapperHomepage",
+  "#contactBtnHomepage",
+  "Send Message",
+  "✅ Your message has been sent!"
+);
+
+handleFormSubmissionV3(
+  "#newsletterFormFooterBlog",
+  "#newsletterWrapperFooterBlog",
+  "#newsletterBtnFooterBlog",
+  "",
+  "✅ Thank you for subscribing!"
+);
+
+handleFormSubmissionV3(
+  ".subscribe-form",
+  "#subscribeWrapperGeneric",
+  ".subscribe-form .c-button-primary",
+  "Subscribe",
+  "✅ Thank you for subscribing!"
+);
 </script>
+
 
