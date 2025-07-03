@@ -303,13 +303,14 @@
 
 
 
-
 <script>
-const GOOGLE_FORM_URL = "https://script.google.com/macros/s/AKfycbzOjZcjIC3c-zu9Ytxvsw3LcJAMjC30JuI3scuLMgZAxrTypr3_Nd40rDEthjKVnkwPGg/exec"; // Replace
+const GOOGLE_FORM_URL = "https://script.google.com/macros/s/AKfycbzOjZcjIC3c-zu9Ytxvsw3LcJAMjC30JuI3scuLMgZAxrTypr3_Nd40rDEthjKVnkwPGg/exec";
 
-function handleFormSubmission(formSelector) {
+// Helper function to handle Google Forms + inline feedback
+function handleFormSubmissionV2(formSelector, wrapperSelector, successMessage) {
   const form = document.querySelector(formSelector);
-  if (!form) return;
+  const wrapper = document.querySelector(wrapperSelector);
+  if (!form || !wrapper) return;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -321,128 +322,46 @@ function handleFormSubmission(formSelector) {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert(data.message || "Form submitted!");
+        // Build message div
+        const msg = document.createElement("div");
+        msg.className = "form-response";
+        msg.style.color = "green";
+        msg.style.padding = "15px";
+        msg.textContent = successMessage;
+
+        // Replace form with message temporarily
+        wrapper.innerHTML = '';
+        wrapper.appendChild(msg);
+
+        // Reset form & restore after 3 seconds
         form.reset();
+        setTimeout(() => {
+          wrapper.innerHTML = '';
+          wrapper.appendChild(form);
+        }, 3000);
       })
       .catch((err) => {
-        alert("Something went wrong!");
+        const errMsg = document.createElement("div");
+        errMsg.className = "form-response";
+        errMsg.style.color = "red";
+        errMsg.style.padding = "15px";
+        errMsg.textContent = "❌ Something went wrong!";
+        wrapper.innerHTML = '';
+        wrapper.appendChild(errMsg);
+
+        setTimeout(() => {
+          wrapper.innerHTML = '';
+          wrapper.appendChild(form);
+        }, 3000);
+
         console.error(err);
       });
   });
 }
 
-// Call for each form
-handleFormSubmission("#projectFormHomepage");
-handleFormSubmission("#newsletterFormFooterBlog");
-handleFormSubmission(".subscribe-form");
+// Call for each form you want to enhance
+handleFormSubmissionV2("#projectFormHomepage", "#contactWrapperHomepage", "✅ Your message has been sent!");
+handleFormSubmissionV2("#newsletterFormFooterBlog", "#newsletterWrapperFooterBlog", "✅ Thank you for subscribing!");
+handleFormSubmissionV2(".subscribe-form", "#subscribeWrapperGeneric", "✅ Thank you for subscribing!");
 </script>
 
-
-
-
-
-
-
-
-
-<script>
-// Your handleAjaxForm function (no changes needed inside this function)
-function handleAjaxForm(formId, wrapperId, buttonId, originalText) {
-  const form = document.getElementById(formId);
-  const wrapper = document.getElementById(wrapperId);
-  const button = document.getElementById(buttonId);
-
-  // Crucial checks: Only initialize if elements are found on the page
-  if (!form || !wrapper || !button) {
-    // console.log(`Skipping form initialization for ID: ${formId} as elements were not found.`);
-    return;
-  }
-
-  const span = button.querySelector("span");
-
-  if (!span) {
-      console.error(`Span element not found inside button with ID: ${buttonId} for form ID: ${formId}. Cannot apply loading text.`);
-      return; 
-  }
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    button.disabled = true;
-    let dotCount = 0;
-    const loadingInterval = setInterval(() => {
-      dotCount = (dotCount + 1) % 4;
-      span.textContent = originalText + ".".repeat(dotCount);
-    }, 500);
-
-    const formData = new FormData(form);
-
-    fetch(form.action, { // form.action will be 'send_email.php'
-      method: "POST",
-      body: formData
-    })
-    .then(res => res.text())
-    .then(response => {
-      clearInterval(loadingInterval);
-      button.disabled = false;
-      span.textContent = originalText;
-
-      let message = "";
-      let color = "";
-      const trimmedResponse = response.trim();
-
-      // Updated success/error message handling from send_email.php
-      if (trimmedResponse === "success_newsletter") { // From newsletter
-        message = "✅ Thank you for subscribing!";
-        color = "green";
-        form.reset();
-      } else if (trimmedResponse === "success_contact") { // From contact form
-        message = "✅ Your message has been sent!";
-        color = "green";
-        form.reset();
-      } else if (trimmedResponse === "error_sending_mail") { // Generic mailer error
-        message = "❌ Sorry, there was an issue sending your message. Please try again.";
-        color = "red";
-      } else { // PHP validation errors or unknown response
-        message = "❌ " + response;
-        color = "red";
-      }
-
-      wrapper.innerHTML = `<div class="form-response" style="color: ${color}; padding: 15px;">${message}</div>`;
-
-      setTimeout(() => {
-        wrapper.innerHTML = '';
-        wrapper.appendChild(form);
-      }, 3000);
-    })
-    .catch(() => {
-      clearInterval(loadingInterval);
-      button.disabled = false;
-      span.textContent = originalText;
-
-      wrapper.innerHTML = `<div class="form-response" style="color: red; padding: 15px;">❌ There was an error connecting. Please try again.</div>`;
-      setTimeout(() => {
-        wrapper.innerHTML = '';
-        wrapper.appendChild(form);
-      }, 3000);
-    });
-  });
-}
-
-// --- Calls for ALL unique form instances on your website ---
-
-// Homepage Contact Form (example, if it's the only one of its kind or has a unique ID)
-handleAjaxForm("projectFormHomepage", "contactWrapperHomepage", "contactBtnHomepage", "Send Message");
-
-// Newsletter Form in Main Content of Blog Page (with text button)
-handleAjaxForm("newsletterFormMain", "newsletterWrapperMain", "newsletterBtnMain", "Subscribe Now");
-
-// Newsletter Form in Footer of Blog Page (with icon-only button)
-handleAjaxForm("newsletterFormFooterBlog", "newsletterWrapperFooterBlog", "newsletterBtnFooterBlog", "");
-
-// If you have a *separate* newsletter in the footer on the homepage AND it uses different IDs:
-// handleAjaxForm("newsletterFormFooterHomepage", "newsletterWrapperFooterHomepage", "newsletterBtnFooterHomepage", "");
-
-// Ensure your `send_email.php` script is correctly configured to output "success_newsletter"
-// or "success_contact" for different forms, as per our last discussion.
-</script>
